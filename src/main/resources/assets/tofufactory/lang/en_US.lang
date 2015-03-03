@@ -1,0 +1,153 @@
+itemGroup.TofuFactory=TofuFactory
+
+tile.tofufactory:oreMithril.name=Mithril Ore
+tile.tofufactory:oreMithrilTofu.name=Mithril Tofu Ore
+
+tile.tofufactory:blockTofuMetal.tofuSteel.name=Tofu Steel Block
+tile.tofufactory:blockTofuMetal.mithrilTofu.name=Mithril Tofu Block
+tile.tofufactory:blockTofuMetal.sol.name=Solar Block
+tile.tofufactory:blockTofuMetal.luna.name=Lunar Block
+
+tile.tofufactory:tfPulverizer.name=TF Pulverizer
+tile.tofufactory:tfCompactor.name=TF Compactor
+tile.tofufactory:tfCuttingMachine.name=TF Cutting Machine
+
+container.tofufactory:tfPulverizer=TF Pulverizer
+container.tofufactory:tfCompactor=TF Compactor
+container.tofufactory:tfCuttingMachine=TF Cutting Machine
+
+item.tofufactory:zundaSword.name=Zunda Sword
+item.tofufactory:zundaIngot.name=Zunda Ingot
+item.tofufactory:flour.name=Flour
+item.tofufactory:bakingSoda.name=Baking Soda
+item.tofufactory:udonNoodles.name=Udon Noodles
+item.tofufactory:ramenNoodles.name=Chinese Noodles
+item.tofufactory:craftingHammer.name=Tofu Forge Hammer
+item.tofufactory:craftingHammer.tooltip.UsesLeft=Uses left: %d
+item.tofufactory:kamaboko.name=Kamaboko
+item.tofufactory:soySauceUdon.name=Udon
+item.tofufactory:misoUdonStew.name=Miso Udon Stew
+item.tofufactory:soySauceRamen.name=Ramen
+
+item.tofufactory:ingot.tofuSteel.name=Tofu Steel Ingot
+item.tofufactory:ingot.mithrilTofu.name=Mithril Tofu Ingot
+item.tofufactory:ingot.sol.name=Solar Ingot
+item.tofufactory:ingot.luna.name=Lunar Ingot
+
+item.tofufactory:plate.tofuSteel.name=Tofu Steel Plate
+item.tofufactory:plate.mithrilTofu.name=Mithril Tofu Plate
+item.tofufactory:plate.sol.name=Solar Plate
+item.tofufactory:plate.luna.name=Lunar Plate
+
+item.tofufactory:gear.tofuSteel.name=Tofu Steel Gear
+item.tofufactory:gear.mithrilTofu.name=Mithril Tofu Gear
+item.tofufactory:gear.sol.name=Solar Gear
+item.tofufactory:gear.luna.name=Lunar Gear
+
+item.tofufactory:dust.tofuSteel.name=Tofu Steel Dust
+item.tofufactory:dust.mithrilTofu.name=Mithril Tofu Dust
+item.tofufactory:dust.sol.name=Solar Dust
+item.tofufactory:dust.luna.name=Lunar Dust
+item.tofufactory:dust.iron.name=Iron Dust
+item.tofufactory:dust.diamondTofu.name=Diamond Tofu Dust
+item.tofufactory:dust.mithril.name=Mithril Dust
+
+item.tofufactory:gem.emeraldTofu.name=Emerald Tofu
+item.tofufactory:gem.peridotTofu.name=Peridot Tofu
+item.tofufactory:gem.rubyTofu.name=Ruby Tofu
+item.tofufactory:gem.sapphireTofu.name=Sapphire Tofu
+item.tofufactory:gem.sugiliteTofu.name=Sugilite Tofu
+item.tofufactory:gem.topazTofu.name=Topaz Tofu
+
+item.tofufactory:magicCircuit.name=Magic Circuit
+item.tofufactory:magicCircuitAdv.name=Advanced Magic Circuit
+item.tofufactory:ringSun.name=Ring of the Sun
+item.tofufactory:ringMoon.name=Ring of the Moon
+item.tofufactory:tofuBlade.name=Tofu Blade
+
+fluid.SoupStock=Soup Stock
+fluid.NoodleSoup=Noodle Soup
+fluid.Zunda=Zunda Water
+fluid.DrinkingWater=Drinking Water
+fluid.MoltenZunda=Molten Zunda
+
+# BC
+item.tofufactory:pipe.item.tofuIshi.name=Solid Tofu Transport Pipe
+item.tofufactory:pipe.fluid.tofuIshi.name=Solid Tofu Fluid Pipe
+item.tofufactory:pipe.power.tofuIshi.name=Solid Tofu Kinesis Pipe
+item.tofufactory:pipe.item.zunda.name=Zunda Transport Pipe
+item.tofufactory:pipe.fluid.zunda.name=Zunda Fluid Pipe
+item.tofufactory:pipe.power.zunda.name=Zunda Kinesis Pipe
+
+# IC2
+item.tofufactory:zundaBattery.name=Zunda Battery
+item.tofufactory:zunda_swordBow.name=Zunda Sword 2
+
+item.tofufactory:cell.bittern.name=Bittern Cell
+item.tofufactory:cell.drinkingWater.name=Drinking Water Cell
+item.tofufactory:cell.noodleSoup.name=Noodle Soup Cell
+item.tofufactory:cell.soupStock.name=Soup Stock Cell
+item.tofufactory:cell.zundaWater.name=Zunda Water Cell
+item.tofufactory:cell.soymilk.name=Soy Milk Cell
+item.tofufactory:cell.soymilkHell.name=Hell Soy Milk Cell
+item.tofufactory:cell.soySauce.name=Soy Sauce Cell
+
+# FFM
+tile.tofufactory:tofuHive.name=Tofu Hive
+item.tofufactory:zundaGrafter.name=Zunda Grafter
+
+item.tofufactory:tofuBackpack1.name=Tofu Cook's Backpack
+item.tofufactory:tofuBackpack2.name=Tofu Cook's Woven Backpack
+item.tofufactory:zundaBackpack1.name=Zunko's Backpack
+item.tofufactory:zundaBackpack2.name=Zunko's Woven Backpack
+
+item.tofufactory:tube.zunda.name=Zunda Electron Tube
+item.tofufactory:tube.tofuGem.name=Tofu Gem Electron Tube
+item.tofufactory:tube.ishiTofu.name=Solid Tofu Electron Tube
+item.tofufactory:tube.metalTofu.name=Metal Tofu Electron Tube
+item.tofufactory:tube.hellTofu.name=Hell Tofu Electron Tube
+
+for.circuit.Edamame=Edamame Farm
+for.circuit.Soybean=Soybean Farm
+for.circuit.Apricot=Apricot Plantation
+for.circuit.tofuTree=Tofu Tree Plantation
+for.circuit.SoybeanHell=Hell Soybean Farm
+
+# TC
+item.tofufactory:tofuFocus.name=Tofu Focus
+
+tc.research_category.Tofu=Tofu
+tc.aspect.tofu=Tofu, Mystery
+
+tc.research_name.TofuAspect=Tofu Aspect
+tc.research_text.TofuAspect=Mystery of the Orient
+tc.research_page.TofuAspect=  Tofu is a mystery of the Orient. While this has been familiar with the people living there who eat it from ancient times, in this world its square white body holds a spiritual power inside, or so they say--
+tc.research_name.ArcaneKinuTofu=Kinugoshi Tofu
+tc.research_text.ArcaneKinuTofu=A mystery material from the Orient
+tc.research_page.ArcaneKinuTofu=  Kinugoshi is a basic style of tofu, which is solid white and has a soft and delicate beauty. Soy milk curds by giving a certain kind of shock from water magic.
+tc.research_name.tofuFocus=Tofu Focus
+tc.research_text.tofuFocus=Tofu Magic
+tc.research_page.tofuFocus=  Tofu has finally given you a glimpse of its magic power. You can expect it gives you even more power depending on you.
+tc.research_name.Mithril=Mithril Tofu
+tc.research_text.Mithril=Like tofu, like magic
+tc.research_page.Mithril=  A white soft metal like tofu, as it's mithril, holds magic power inside.
+tc.research_name.Sol=Sol
+tc.research_text.Sol=The tofu of the dawn
+tc.research_page.Sol=  Golden mithril tofu, an alloy with a luster like the sun of the dawn softly shining over the world.
+tc.research_name.Luna=Luna
+tc.research_text.Luna=The tofu of the September moon
+tc.research_page.Luna=  Silver mithril tofu, an alloy with a luster like the moon vaporously showing up between clouds in the night sky.
+tc.research_name.MagicCircuit=Magic Circuit
+tc.research_text.MagicCircuit=Tofu magic of elementary
+tc.research_page.MagicCircuit=  A circuit created by the magic of the tofu controlled intricately and delicately. This is an essential for assembling the tofu machines.
+
+# Achievements
+achievement.tofufactory:mithril=The beginning of the Magic
+achievement.tofufactory:mithril.desc=Let's go finding Mithril ores
+achievement.tofufactory:magicPowder=Magic Powder
+achievement.tofufactory:magicPowder.desc=Crushing Mithril ores
+
+# Update
+tofufactory.update.server=TofuFactory Reloaded %1$s available at %2$s
+tofufactory.update.client=§eTofuFactory Reloaded§r §a%1$s§r available! %2$s
+tofufactory.update.link=§nDownload here§r

@@ -1,0 +1,153 @@
+itemGroup.TofuFactory=豆腐Factory Reloaded
+
+tile.tofufactory:oreMithril.name=ミスリル鉱石
+tile.tofufactory:oreMithrilTofu.name=ミスリル豆腐鉱石
+
+tile.tofufactory:blockTofuMetal.tofuSteel.name=豆腐鋼ブロック
+tile.tofufactory:blockTofuMetal.mithrilTofu.name=ミスリル豆腐ブロック
+tile.tofufactory:blockTofuMetal.sol.name=ソルブロック
+tile.tofufactory:blockTofuMetal.luna.name=ルナブロック
+
+tile.tofufactory:tfPulverizer.name=TFパルバライザー
+tile.tofufactory:tfCompactor.name=TFコンパクター
+tile.tofufactory:tfCuttingMachine.name=TFカッティングマシン
+
+container.tofufactory:tfPulverizer=TFパルバライザー
+container.tofufactory:tfCompactor=TFコンパクター
+container.tofufactory:tfCuttingMachine=TFカッティングマシン
+
+item.tofufactory:zundaSword.name=ずんだソード
+item.tofufactory:zundaIngot.name=ずんだインゴット
+item.tofufactory:flour.name=小麦粉
+item.tofufactory:bakingSoda.name=重曹
+item.tofufactory:udonNoodles.name=うどん麺
+item.tofufactory:ramenNoodles.name=中華麺
+item.tofufactory:kamaboko.name=蒲鉾
+item.tofufactory:craftingHammer.name=豆腐鍛冶ハンマー
+item.tofufactory:craftingHammer.tooltip.UsesLeft=使用残り: %d
+item.tofufactory:soySauceUdon.name=うどん
+item.tofufactory:misoUdonStew.name=味噌煮込みうどん
+item.tofufactory:soySauceRamen.name=ラーメン
+
+item.tofufactory:ingot.tofuSteel.name=豆腐鋼インゴット
+item.tofufactory:ingot.mithrilTofu.name=ミスリル豆腐インゴット
+item.tofufactory:ingot.sol.name=ソルインゴット
+item.tofufactory:ingot.luna.name=ルナインゴット
+
+item.tofufactory:plate.tofuSteel.name=豆腐鋼プレート
+item.tofufactory:plate.mithrilTofu.name=ミスリル豆腐のプレート
+item.tofufactory:plate.sol.name=ソルのプレート
+item.tofufactory:plate.luna.name=ルナのプレート
+
+item.tofufactory:gear.tofuSteel.name=豆腐鋼の歯車
+item.tofufactory:gear.mithrilTofu.name=ミスリル豆腐の歯車
+item.tofufactory:gear.sol.name=ソルの歯車
+item.tofufactory:gear.luna.name=ルナの歯車
+
+item.tofufactory:dust.tofuSteel.name=豆腐鋼の粉
+item.tofufactory:dust.mithrilTofu.name=ミスリル豆腐の粉
+item.tofufactory:dust.sol.name=ソルの粉
+item.tofufactory:dust.luna.name=ルナの粉
+item.tofufactory:dust.iron.name=鉄の粉
+item.tofufactory:dust.diamondTofu.name=金剛豆腐の粉
+item.tofufactory:dust.mithril.name=ミスリルの粉
+
+item.tofufactory:gem.emeraldTofu.name=エメラルド豆腐
+item.tofufactory:gem.peridotTofu.name=ペリドット豆腐
+item.tofufactory:gem.rubyTofu.name=ルビー豆腐
+item.tofufactory:gem.sapphireTofu.name=サファイア豆腐
+item.tofufactory:gem.sugiliteTofu.name=スギライト豆腐
+item.tofufactory:gem.topazTofu.name=トパーズ豆腐
+
+item.tofufactory:magicCircuit.name=魔法回路
+item.tofufactory:magicCircuitAdv.name=集積魔法回路
+item.tofufactory:ringSun.name=太陽のリング
+item.tofufactory:ringMoon.name=月のリング
+item.tofufactory:tofuBlade.name=豆腐ブレード
+
+fluid.SoupStock=出汁
+fluid.NoodleSoup=めんつゆ
+fluid.Zunda=ずんだ水
+fluid.DrinkingWater=飲料水
+fluid.MoltenZunda=溶融ずんだ
+
+# BC
+item.tofufactory:pipe.item.tofuIshi.name=石豆腐輸送パイプ
+item.tofufactory:pipe.fluid.tofuIshi.name=石豆腐防水パイプ
+item.tofufactory:pipe.power.tofuIshi.name=石豆腐伝導パイプ
+item.tofufactory:pipe.item.zunda.name=ずんだ輸送パイプ
+item.tofufactory:pipe.fluid.zunda.name=ずんだ防水パイプ
+item.tofufactory:pipe.power.zunda.name=ずんだ伝導パイプ
+
+# IC2
+item.tofufactory:zundaBattery.name=ずんだバッテリー
+item.tofufactory:zunda_swordBow.name=ずんだソード2
+
+item.tofufactory:cell.bittern.name=にがり入りセル
+item.tofufactory:cell.drinkingWater.name=飲料水入りセル
+item.tofufactory:cell.noodleSoup.name=めんつゆ入りセル
+item.tofufactory:cell.soupStock.name=出汁入りセル
+item.tofufactory:cell.zundaWater.name=ずんだ水入りセル
+item.tofufactory:cell.soymilk.name=豆乳入りセル
+item.tofufactory:cell.soymilkHell.name=地獄豆乳入りセル
+item.tofufactory:cell.soySauce.name=醤油入りセル
+
+# FFM
+tile.tofufactory:tofuHive.name=豆腐蜂の巣
+item.tofufactory:zundaGrafter.name=ずんだ製の接木小刀
+
+item.tofufactory:tofuBackpack1.name=豆腐職人バックパック
+item.tofufactory:tofuBackpack2.name=豆腐職人の強化バックパック
+item.tofufactory:zundaBackpack1.name=ずんこバックパック
+item.tofufactory:zundaBackpack2.name=ずんこの強化バックパック
+
+item.tofufactory:tube.zunda.name=ずんだ真空管
+item.tofufactory:tube.tofuGem.name=豆腐石真空管
+item.tofufactory:tube.ishiTofu.name=石豆腐真空管
+item.tofufactory:tube.metalTofu.name=鋼豆腐真空管
+item.tofufactory:tube.hellTofu.name=地獄豆腐真空管
+
+for.circuit.Edamame=枝豆畑
+for.circuit.Soybean=大豆畑
+for.circuit.Apricot=杏園
+for.circuit.tofuTree=豆腐の木園
+for.circuit.SoybeanHell=地獄豆腐畑
+
+# TC
+item.tofufactory:tofuFocus.name=豆腐の杖星
+
+tc.research_category.Tofu=豆腐
+tc.aspect.tofu=豆腐, 神秘
+
+tc.research_name.TofuAspect=豆腐の相
+tc.research_text.TofuAspect=東洋の神秘
+tc.research_page.TofuAspect=  豆腐、それは東洋の神秘である。古くよりその地域の人々にごく自然に食され親しまれてきたが、その四角く白いボディにはこの世界において不思議な力が宿ると言われている——。
+tc.research_name.ArcaneKinuTofu=絹ごし豆腐
+tc.research_text.ArcaneKinuTofu=東洋神秘の素材
+tc.research_page.ArcaneKinuTofu=  豆腐の基本素材となる絹ごし豆腐。ソリッドな白さで柔らかく繊細な美しさがある。豆乳に水魔法による特定の刺激を加えることで凝固する。
+tc.research_name.tofuFocus=豆腐の杖星
+tc.research_text.tofuFocus=豆腐の魔法
+tc.research_page.tofuFocus=  豆腐はついに秘めた魔力の片鱗を見せてくれた。あなた次第でさらなる魔力を引き出されることが期待されよう。
+tc.research_name.Mithril=ミスリル豆腐
+tc.research_text.Mithril=豆腐のような魔法のような
+tc.research_page.Mithril=豆腐のように白く柔らかい金属。ミスリルというだけに魔法の力を秘めている。
+tc.research_name.Sol=ソル
+tc.research_text.Sol=暁の豆腐
+tc.research_page.Sol=  金のミスリル豆腐。暁に世界を柔らかく照らす太陽のような光沢を持つ合金だ。
+tc.research_name.Luna=ルナ
+tc.research_text.Luna=おぼろ月の豆腐
+tc.research_page.Luna=  銀のミスリル豆腐。夜空の雲間からおぼろに現れる月のような光沢を持つ合金だ。
+tc.research_name.MagicCircuit=魔法回路
+tc.research_text.MagicCircuit=豆腐魔法の基本素材
+tc.research_page.MagicCircuit=  複雑かつ繊細に制御された豆腐の魔力が編み出した回路だ。豆腐マシンの製作には欠かせない素材である。
+
+# Achievements
+achievement.tofufactory:mithril=魔法の始まり
+achievement.tofufactory:mithril.desc=ミスリル鉱石を見つけに行こう
+achievement.tofufactory:magicPowder=魔法の粉
+achievement.tofufactory:magicPowder.desc=機械でミスリル鉱石を砕こう
+
+# Update
+tofufactory.update.server=豆腐Factory Reloaded %1$sに更新しました! ダウンロード: %2$s
+tofufactory.update.client=§e豆腐Factory Reloaded§r §a%1$s§rに更新しました! %2$s
+tofufactory.update.link=§こちらからダウンロード§r
