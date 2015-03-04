@@ -9,17 +9,16 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import tsuteto.tofu.api.recipe.TcOreDic;
-import tsuteto.tofu.item.ItemFoodSet;
-import tsuteto.tofufactory.integration.TFIntegrationManager;
-import tsuteto.tofufactory.fluid.TFFluids;
-import tsuteto.tofufactory.integration.plugins.PluginFFM;
-import tsuteto.tofufactory.core.TFItems;
-import tsuteto.tofufactory.integration.ITFRecipeModule;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.fluids.TcFluids;
+import tsuteto.tofu.item.ItemFoodSet;
 import tsuteto.tofu.item.ItemTcMaterials;
 import tsuteto.tofu.item.TcItems;
+import tsuteto.tofufactory.core.TFItems;
+import tsuteto.tofufactory.fluid.TFFluids;
+import tsuteto.tofufactory.integration.ITFRecipeModule;
+import tsuteto.tofufactory.integration.TFIntegrationManager;
+import tsuteto.tofufactory.integration.plugins.PluginFFM;
 import tsuteto.tofufactory.integration.plugins.PluginIC2;
 import tsuteto.tofufactory.item.ItemTFCell;
 import tsuteto.tofufactory.item.ItemTFFoodSet;
@@ -33,6 +32,11 @@ public class RecipeFFM implements ITFRecipeModule
         registerInFabricator();
         registerInSqueezer();
         registerInStill();
+
+        if (TFIntegrationManager.modIC2.isAvailable())
+        {
+            registerForIC2();
+        }
     }
 
     private void registerInFabricator()
@@ -136,11 +140,6 @@ public class RecipeFFM implements ITFRecipeModule
 
     private void registerInCarpenter()
     {
-        if (TFIntegrationManager.modIC2.isAvailable())
-        {
-            registerUsingIC2();
-        }
-
         // 4x Flour
         RecipeManagers.carpenterManager.addRecipe(20, (FluidStack)null, null,
                 new ItemStack(TFItems.flour, 4),
@@ -264,12 +263,6 @@ public class RecipeFFM implements ITFRecipeModule
                 "x",
                 'x', "tofuFriedPouch");
 
-        // Noodle Soup
-        RecipeManagers.carpenterManager.addRecipe(20, new FluidStack(TFFluids.soupStock, 500), PluginIC2.ic2Cell.copy(),
-                ItemTFCell.noodleSoup.getStack(),
-                "x",
-                'x', "bottleSoySauce");
-
         // Udon
         RecipeManagers.carpenterManager.addRecipe(20, new FluidStack(TFFluids.noodleSoup, 100), new ItemStack(Items.bowl, 1),
                 ItemTFFoodSet.soySauceUdon.getStack(),
@@ -297,7 +290,7 @@ public class RecipeFFM implements ITFRecipeModule
                 'N', "ramenNoodles");
     }
 
-    public void registerUsingIC2()
+    public void registerForIC2()
     {
         ItemStack electronicCircuit = IC2Items.getItem("electronicCircuit");
         electronicCircuit.stackSize = 3;
@@ -321,6 +314,12 @@ public class RecipeFFM implements ITFRecipeModule
                 'y', "ingotTofuSteel",
                 'z', Items.redstone,
                 'a', Items.glowstone_dust);
+
+        // Noodle Soup
+        RecipeManagers.carpenterManager.addRecipe(20, new FluidStack(TFFluids.soupStock, 500), PluginIC2.ic2Cell.copy(),
+                ItemTFCell.noodleSoup.getStack(),
+                "x",
+                'x', "bottleSoySauce");
     }
 
     private void registerInSqueezer()

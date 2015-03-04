@@ -5,17 +5,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
-import net.minecraftforge.fluids.FluidRegistry;
-import tsuteto.tofufactory.integration.ITFPlugin;
 import tsuteto.tofufactory.core.TFItems;
-import tsuteto.tofufactory.integration.TFIntegrationManager;
 import tsuteto.tofufactory.core.TofuFactory;
-import tsuteto.tofufactory.fluid.TFFluids;
+import tsuteto.tofufactory.integration.ITFPlugin;
 import tsuteto.tofufactory.item.ItemTFCell;
 import tsuteto.tofufactory.item.ItemZundaBattery;
 import tsuteto.tofufactory.item.ItemZundaSwordBow;
 import tsuteto.tofufactory.registry.ItemRegister;
-import tsuteto.tofu.fluids.TcFluids;
 
 public class PluginIC2 implements ITFPlugin
 {
@@ -50,11 +46,6 @@ public class PluginIC2 implements ITFPlugin
         zundaSwordBowEmpty = ItemRegister.of("zunda_swordBowE", new Item())
                 .withResource("zunda_swordBow")
                 .register();
-
-        if (TFIntegrationManager.modForestry.isAvailable())
-        {
-            registerFFM();
-        }
     }
 
     private void initCells()
@@ -68,6 +59,4 @@ public class PluginIC2 implements ITFPlugin
                     info.getFluid(), info.getStack(), ic2Cell.copy()));
         }
     }
-
-    private void registerFFM() {}
 }

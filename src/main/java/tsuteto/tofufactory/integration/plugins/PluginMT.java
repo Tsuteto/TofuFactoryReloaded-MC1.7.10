@@ -3,7 +3,6 @@ package tsuteto.tofufactory.integration.plugins;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 import tsuteto.tofufactory.integration.ITFPlugin;
-import tsuteto.tofufactory.integration.ITFPlugin;
 
 public class PluginMT implements ITFPlugin
 {

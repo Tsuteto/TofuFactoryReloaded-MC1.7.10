@@ -4,30 +4,29 @@ import com.google.common.collect.Lists;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import forestry.api.storage.BackpackManager;
 import forestry.api.storage.EnumBackpackType;
-import forestry.core.config.ForestryItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import tsuteto.tofufactory.integration.ITFPlugin;
-import tsuteto.tofufactory.core.TFItems;
-import tsuteto.tofufactory.integration.TFIntegrationManager;
-import tsuteto.tofufactory.core.TofuFactory;
+import tsuteto.tofu.block.TcBlocks;
+import tsuteto.tofu.item.ItemFoodSet;
+import tsuteto.tofu.item.ItemTcMaterials;
+import tsuteto.tofu.item.TcItems;
 import tsuteto.tofufactory.bee.BeeManager;
 import tsuteto.tofufactory.bee.TFHiveType;
 import tsuteto.tofufactory.block.BlockTFHive;
 import tsuteto.tofufactory.config.TFConfig;
+import tsuteto.tofufactory.core.TFItems;
+import tsuteto.tofufactory.core.TofuFactory;
 import tsuteto.tofufactory.ffm.farming.TFFarmingRegister;
+import tsuteto.tofufactory.integration.ITFPlugin;
+import tsuteto.tofufactory.integration.TFIntegrationManager;
 import tsuteto.tofufactory.item.ItemTFGrafter;
 import tsuteto.tofufactory.item.ItemTube;
 import tsuteto.tofufactory.item.ItemTubeOverlayInfo;
 import tsuteto.tofufactory.registry.BlockRegister;
 import tsuteto.tofufactory.registry.ItemRegister;
 import tsuteto.tofufactory.storage.BackpackDefinition;
-import tsuteto.tofu.block.TcBlocks;
-import tsuteto.tofu.item.ItemFoodSet;
-import tsuteto.tofu.item.ItemTcMaterials;
-import tsuteto.tofu.item.TcItems;
 
 import java.util.ArrayList;
 
@@ -197,6 +196,7 @@ public class PluginFFM implements ITFPlugin
         zundaItems.add(new ItemStack(TFItems.zundaSword));
         zundaItems.add(new ItemStack(TFItems.zundaIngot));
         zundaItems.add(ItemFoodSet.zundaMochi.getStack());
+
         if (TFIntegrationManager.modIC2.isAvailable())
         {
             zundaItems.add(new ItemStack(PluginIC2.zundaBattery));

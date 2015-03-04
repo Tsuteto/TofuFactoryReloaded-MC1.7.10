@@ -27,7 +27,6 @@ public abstract class TileEntityMJMachine extends TileEntityLegacyMachine implem
         {
             float i = battery.useEnergy(20, 80, true);
             this.MJTime = (int)((float)this.MJTime + i * 3.0F);
-            //System.out.println(i + "aaaaaaaaaaaaaaaaaa");
             return true;
         }
         else

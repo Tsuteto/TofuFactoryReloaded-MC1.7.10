@@ -16,10 +16,11 @@ public class TFOreDictionary
         OreDictionary.registerOre("flour", TFItems.flour);
         OreDictionary.registerOre("cookingFlour", TFItems.flour);
         OreDictionary.registerOre("ingotZunda", TFItems.zundaIngot);
-        OreDictionary.registerOre("craftingToolForgeHammer", new ItemStack(TFItems.craftingHammer, 1, OreDictionary.WILDCARD_VALUE));
         OreDictionary.registerOre("foodKamaboko", ItemTFFoodSet.kamaboko.getStack());
         OreDictionary.registerOre("udonNoodles", TFItems.udonNoodles);
         OreDictionary.registerOre("ramenNoodles", TFItems.ramenNoodles);
+        OreDictionary.registerOre("craftingMagicCircuit", ItemTFMaterial.magicCircuit.getStack());
+        OreDictionary.registerOre("craftingMagicCircuitAdv", ItemTFMaterial.magicCircuitAdv.getStack());
 
         for (ItemTFDust.Info m : ItemTFDust.dusts)
         {
@@ -49,13 +50,12 @@ public class TFOreDictionary
         // Integration
         OreDictionary.registerOre("ingotTofuMetal", TcItems.tofuMetal);
         OreDictionary.registerOre("vegetableLeek", TcItems.leek);
+        OreDictionary.registerOre("craftingToolForgeHammer", new ItemStack(TFItems.craftingHammer, 1, OreDictionary.WILDCARD_VALUE)); // IC2: Forge Hammer
         OreDictionary.registerOre("craftingMacerator", new ItemStack(TFItems.tofuPulverizerIdle)); // IC2: Macerator (Registered by Greg)
         OreDictionary.registerOre("craftingCompressor", new ItemStack(TFItems.tofuCompactorIdle)); // IC2: Compressor (Registered by Greg)
         OreDictionary.registerOre("craftingDiamondBlade", ItemTFMaterial.tofuBlade.getStack()); // Greg: Diamond Blade
         OreDictionary.registerOre("ringSol", ItemTFMaterial.ringSun.getStack()); // Greg: Ring
         OreDictionary.registerOre("ringLuna", ItemTFMaterial.ringMoon.getStack()); // Greg: Ring
-        OreDictionary.registerOre("craftingCircuitTier04", ItemTFMaterial.magicCircuit.getStack()); // AE: Basic Card
-        OreDictionary.registerOre("craftingCircuitTier05", ItemTFMaterial.magicCircuitAdv.getStack()); // AE: Advanced Card
     }
 
 

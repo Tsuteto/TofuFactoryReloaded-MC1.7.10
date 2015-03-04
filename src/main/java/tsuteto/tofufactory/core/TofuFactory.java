@@ -37,7 +37,7 @@ import tsuteto.tofufactory.village.TradeHandlerPriest;
 public class TofuFactory
 {
     public static final String modId = "TofuFactory";
-    public static final String version = "1.0.0-MC1.7.10";
+    public static final String version = "1.0.1-MC1.7.10";
     public static final String resourceDomain = "tofufactory:";
     public static final TFLog log = new TFLog(TofuFactory.modId, Boolean.valueOf(System.getProperty("tofufactory.debug", "false")));
 
