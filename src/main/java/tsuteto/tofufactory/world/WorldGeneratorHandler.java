@@ -1,17 +1,19 @@
 package tsuteto.tofufactory.world;
 
 import cpw.mods.fml.common.IWorldGenerator;
-import java.util.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import tsuteto.tofufactory.bee.TFHiveType;
-import tsuteto.tofufactory.integration.plugins.PluginFFM;
-import tsuteto.tofufactory.core.TFItems;
 import tsuteto.tofu.Settings;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.world.biome.TcBiomes;
+import tsuteto.tofufactory.bee.TFHiveType;
+import tsuteto.tofufactory.core.TFItems;
+import tsuteto.tofufactory.integration.TFIntegrationManager;
+import tsuteto.tofufactory.integration.plugins.PluginFFM;
+
+import java.util.Random;
 
 public class WorldGeneratorHandler implements IWorldGenerator
 {
@@ -53,16 +55,20 @@ public class WorldGeneratorHandler implements IWorldGenerator
 
     private void generateTofu(World world, Random random, int chunkX, int chunkZ)
     {
-        if (random.nextInt(12) == 0)
+        // Tofu bees need FFM
+        if (TFIntegrationManager.modForestry.isReady())
         {
-            int x = chunkX + random.nextInt(16);
-            int z = chunkZ + random.nextInt(16);
-            int y = world.getHeightValue(x, z);
-
-            if (world.getBiomeGenForCoords(x, z) == TcBiomes.tofuForest
-                    && world.isAirBlock(x, y, z) && world.getBlock(x, y - 1, z) == TcBlocks.tofuTerrain)
+            if (random.nextInt(12) == 0)
             {
-                world.setBlock(x, y, z, PluginFFM.tofuHive, TFHiveType.KINU.ordinal(), 3);
+                int x = chunkX + random.nextInt(16);
+                int z = chunkZ + random.nextInt(16);
+                int y = world.getHeightValue(x, z);
+
+                if (world.getBiomeGenForCoords(x, z) == TcBiomes.tofuForest
+                        && world.isAirBlock(x, y, z) && world.getBlock(x, y - 1, z) == TcBlocks.tofuTerrain)
+                {
+                    world.setBlock(x, y, z, PluginFFM.tofuHive, TFHiveType.KINU.ordinal(), 3);
+                }
             }
         }
     }

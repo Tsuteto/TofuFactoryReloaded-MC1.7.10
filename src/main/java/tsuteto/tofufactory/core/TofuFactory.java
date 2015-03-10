@@ -10,6 +10,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
@@ -26,6 +27,7 @@ import tsuteto.tofufactory.registry.BlockRegister;
 import tsuteto.tofufactory.registry.ItemRegister;
 import tsuteto.tofufactory.util.UpdateNotification;
 import tsuteto.tofufactory.village.TradeHandlerPriest;
+import tsuteto.tofufactory.world.WorldGeneratorHandler;
 
 @Mod(
     modid = TofuFactory.modId,
@@ -37,7 +39,7 @@ import tsuteto.tofufactory.village.TradeHandlerPriest;
 public class TofuFactory
 {
     public static final String modId = "TofuFactory";
-    public static final String version = "1.0.1-MC1.7.10";
+    public static final String version = "1.0.2-MC1.7.10";
     public static final String resourceDomain = "tofufactory:";
     public static final TFLog log = new TFLog(TofuFactory.modId, Boolean.valueOf(System.getProperty("tofufactory.debug", "false")));
 
@@ -94,6 +96,7 @@ public class TofuFactory
     public void load(FMLInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(new TFTriggerManager());
+        GameRegistry.registerWorldGenerator(new WorldGeneratorHandler(), 2);
         TFOreDictionary.registerOreDictionary();
     }
 
