@@ -3,12 +3,9 @@ package tsuteto.tofufactory.pipe;
 import buildcraft.api.core.IIconProvider;
 import buildcraft.transport.TravelingItem;
 import buildcraft.transport.pipes.PipeItemsWood;
-
 import buildcraft.transport.pipes.events.PipeEventItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipeItemsZunda extends PipeItemsWood //implements IPipeTransportItemsHook
 {
@@ -33,7 +30,7 @@ public class PipeItemsZunda extends PipeItemsWood //implements IPipeTransportIte
 
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     public int getIconIndex(ForgeDirection direction)

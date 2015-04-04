@@ -11,10 +11,10 @@ import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import tsuteto.tofufactory.integration.plugins.PluginTC;
-import tsuteto.tofufactory.integration.ITFRecipeModule;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.item.TcItems;
+import tsuteto.tofufactory.integration.ITFRecipeModule;
+import tsuteto.tofufactory.integration.plugins.PluginTC;
 import tsuteto.tofufactory.item.ItemTFMaterial;
 import tsuteto.tofufactory.item.ItemTofuIngot;
 
@@ -34,7 +34,7 @@ public class RecipeTC implements ITFRecipeModule
     public static CrucibleRecipe SolR;
     public static CrucibleRecipe LunaR;
 
-    public void register()
+    public void register() throws Exception
     {
         registerArcaneCrafting();
         initResearch();
@@ -42,45 +42,48 @@ public class RecipeTC implements ITFRecipeModule
 
     private void registerArcaneCrafting()
     {
-        // Tofu study
+        // ArcaneCrafting: Kinu Tofu
         tofuKinuR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 tofuKinuK,
                 new ItemStack(TcBlocks.tofuKinu, 1),
                 (new AspectList()).add(Aspect.WATER, 2),
                 new ItemStack(TcItems.bucketSoymilk, 1));
 
-        // Tofu Focus
+        // ArcaneCrafting: Tofu Focus
         tofuFocusR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 tofuKinuK,
                 new ItemStack(PluginTC.tofuFocus, 1),
-                (new AspectList()).add(Aspect.WATER, 2),
+                (new AspectList()).add(PluginTC.TOFU, 2).add(Aspect.WATER, 2),
                 new ItemStack(TcBlocks.tofuKinu, 1));
 
-        // Magic Circuit
+        // ArcaneCrafting: Magic Circuit
         MagicCircuitR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 MagicCircuitK,
                 ItemTFMaterial.magicCircuit.getStack(4),
-                (new AspectList()).add(Aspect.EARTH, 3),
+                (new AspectList()).add(PluginTC.TOFU, 8).add(Aspect.ENERGY, 2).add(Aspect.MECHANISM, 1),
                 ItemTofuIngot.mithrilTofu.getStack(),
                 new ItemStack(Items.redstone, 1));
 
-        // Mithril
+        // Crucible: Mithril Tofu
         MithrilR = ThaumcraftApi.addCrucibleRecipe(
                 MithrilK,
-                ItemTofuIngot.mithrilTofu.getStack(2), "ingotIron",
-                (new AspectList()).add(PluginTC.TOFU, 2));
+                ItemTofuIngot.mithrilTofu.getStack(2),
+                "gemTofu",
+                (new AspectList()).add(PluginTC.TOFU, 5).add(Aspect.WATER, 5).add(Aspect.COLD, 5));
 
-        // Sol
+        // Crucible: Sol
         SolR = ThaumcraftApi.addCrucibleRecipe(
                 SolK,
-                ItemTofuIngot.sol.getStack(2), "ingotMithrilTofu",
-                (new AspectList()).add(PluginTC.TOFU, 1).add(Aspect.LIGHT, 1));
+                ItemTofuIngot.sol.getStack(2),
+                "ingotMithrilTofu",
+                (new AspectList()).add(PluginTC.TOFU, 8).add(Aspect.LIGHT, 3));
 
-        // Luna
+        // Crucible: Luna
         LunaR = ThaumcraftApi.addCrucibleRecipe(
                 LunaK,
-                ItemTofuIngot.luna.getStack(2), "ingotMithrilTofu",
-                (new AspectList()).add(PluginTC.TOFU, 1).add(Aspect.WEATHER, 1));
+                ItemTofuIngot.luna.getStack(2),
+                "ingotMithrilTofu",
+                (new AspectList()).add(PluginTC.TOFU, 8).add(Aspect.WEATHER, 3));
     }
 
     public void initResearch()
@@ -92,33 +95,33 @@ public class RecipeTC implements ITFRecipeModule
                 .setAutoUnlock().setRound());
 
         ResearchCategories.addResearch((new ResearchItem(tofuKinuK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 1), -2, 0, 1, new ItemStack(TcBlocks.tofuKinu, 1)))
+                (new AspectList()).add(PluginTC.TOFU, 1).add(Aspect.WATER, 1).add(Aspect.GREED, 1), -2, 0, 1, new ItemStack(TcBlocks.tofuKinu, 1)))
                 .setPages(new ResearchPage(tofuKinuK, "tc.research_page." + tofuKinuK),
                         new ResearchPage(tofuKinuR)).setParents("TofuAspect"));
 
         ResearchCategories.addResearch((new ResearchItem(tofuFocusK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 1), -1, 2, 1, new ItemStack(PluginTC.tofuFocus, 1)))
+                (new AspectList()).add(PluginTC.TOFU, 2).add(Aspect.ENERGY, 1).add(Aspect.WATER, 2), -1, 2, 1, new ItemStack(PluginTC.tofuFocus, 1)))
                 .setPages(new ResearchPage(tofuFocusK, "tc.research_page." + tofuFocusK),
                         new ResearchPage(tofuFocusR)).setParents(new String[] {"TofuAspect"}).setSpecial());
 
         ResearchCategories.addResearch((new ResearchItem(MithrilK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 3), 2, -1, 1, ItemTofuIngot.mithrilTofu.getStack()))
+                (new AspectList()).add(PluginTC.TOFU, 8).add(Aspect.COLD, 8).add(Aspect.MAGIC, 1), 2, -1, 1, ItemTofuIngot.mithrilTofu.getStack()))
                 .setPages(new ResearchPage(MithrilK, "tc.research_page." + MithrilK),
                         new ResearchPage(MithrilR)).setParents("TofuAspect").setSiblings(SolK, LunaK).setRound());
 
         ResearchCategories.addResearch((new ResearchItem(SolK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 6), 4, 0, 1, ItemTofuIngot.sol.getStack(4)))
+                (new AspectList()).add(PluginTC.TOFU, 16).add(Aspect.LIGHT, 3), 4, 0, 1, ItemTofuIngot.sol.getStack(4)))
                 .setPages(new ResearchPage(SolK, "tc.research_page." + SolK),
                         new ResearchPage(SolR)).setParents(MithrilK));
 
         ResearchCategories.addResearch((new ResearchItem(LunaK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 6), 4, -2, 1, ItemTofuIngot.luna.getStack(4)))
+                (new AspectList()).add(PluginTC.TOFU, 16).add(Aspect.WEATHER, 3), 4, -2, 1, ItemTofuIngot.luna.getStack(4)))
                 .setPages(new ResearchPage(LunaK, "tc.research_page." + LunaK),
                         new ResearchPage(LunaR))
                 .setParents(MithrilK));
 
         ResearchCategories.addResearch((new ResearchItem(MagicCircuitK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 10), 2, 2, 1, ItemTFMaterial.magicCircuit.getStack(4)))
+                (new AspectList()).add(PluginTC.TOFU, 24).add(Aspect.ENERGY, 4).add(Aspect.MECHANISM, 4), 2, 2, 1, ItemTFMaterial.magicCircuit.getStack(4)))
                 .setPages(new ResearchPage(MagicCircuitK, "tc.research_page." + MagicCircuitK),
                         new ResearchPage(MagicCircuitR)).setSpecial());
     }

@@ -5,18 +5,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
-import tsuteto.tofu.fluids.TcFluids;
-import tsuteto.tofufactory.fluid.TFFluids;
-import tsuteto.tofufactory.core.TFItems;
-import tsuteto.tofufactory.integration.ITFRecipeModule;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.item.TcItems;
 import tsuteto.tofufactory.core.TFItems;
 import tsuteto.tofufactory.fluid.TFFluids;
+import tsuteto.tofufactory.integration.ITFRecipeModule;
 
 public class RecipeTcon implements ITFRecipeModule
 {
-    public void register()
+    public void register() throws Exception
     {
         Smeltery.addMelting(new ItemStack(TcItems.zunda, 1), TcBlocks.tofuZunda, 0, 100,
                 new FluidStack(TFFluids.zunda, 1000));

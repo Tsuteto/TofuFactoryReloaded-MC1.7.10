@@ -8,23 +8,25 @@ public class PluginSlot
 {
     public final String modId;
     public final String name;
-    public final Class<? extends ITFPlugin> pluginClass;
 
-    protected Class<? extends ITFRecipeModule> recipeClass = null;
+    public final String pluginName;
+    public ITFPlugin plugin = null;
+
+    protected boolean hasRecipe = false;
     protected boolean configFlag;
     protected IntegrationPhase phase = IntegrationPhase.UNLOADED;
     protected Throwable exception = null;
 
-    public PluginSlot(String name, String modId, Class<? extends ITFPlugin> pluginClass)
+    public PluginSlot(String name, String modId, String pluginName)
     {
         this.name = name;
         this.modId = modId;
-        this.pluginClass = pluginClass;
+        this.pluginName = pluginName;
     }
 
-    public PluginSlot addRecipes(Class<? extends ITFRecipeModule> recipeClass)
+    public PluginSlot withRecipes()
     {
-        this.recipeClass = recipeClass;
+        this.hasRecipe = true;
         return this;
     }
 
@@ -37,11 +39,37 @@ public class PluginSlot
     {
         if (!canLoadMod()) return;
 
-        ITFPlugin plugin;
         try
         {
-            plugin = pluginClass.newInstance();
-            plugin.init();
+            this.plugin = (ITFPlugin)Class.forName("tsuteto.tofufactory.integration.plugins.Plugin" + pluginName).newInstance();
+            this.phase = IntegrationPhase.LOADED;
+        }
+        catch (Exception e)
+        {
+            this.exception = e;
+        }
+    }
+
+    public void callPreInit()
+    {
+        if (this.phase != IntegrationPhase.LOADED) return;
+        try
+        {
+            this.plugin.preInit();
+            this.phase = IntegrationPhase.PRE_INITIALIZED;
+        }
+        catch (Exception e)
+        {
+            this.exception = e;
+        }
+    }
+
+    public void callInit()
+    {
+        if (this.phase != IntegrationPhase.PRE_INITIALIZED) return;
+        try
+        {
+            this.plugin.init();
             this.phase = IntegrationPhase.INITIALIZED;
         }
         catch (Exception e)
@@ -54,11 +82,11 @@ public class PluginSlot
     {
         if (this.phase != IntegrationPhase.INITIALIZED) return;
 
-        if (this.recipeClass != null)
+        if (this.hasRecipe)
         {
             try
             {
-                ITFRecipeModule recipe = recipeClass.newInstance();
+                ITFRecipeModule recipe = (ITFRecipeModule)Class.forName("tsuteto.tofufactory.integration.recipes.Recipe" + pluginName).newInstance();
                 recipe.register();
                 this.phase = IntegrationPhase.RECIPE_LOADED;
             }
@@ -87,7 +115,9 @@ public class PluginSlot
                 String where;
                 switch (this.phase)
                 {
-                    case UNLOADED: where = "in initializing"; break;
+                    case UNLOADED: where = "in instantiation"; break;
+                    case LOADED: where = "in pre-initializing"; break;
+                    case PRE_INITIALIZED: where = "in initializing"; break;
                     case INITIALIZED: where = "in recipe registration"; break;
                     default: where = "somewhere";
                 }

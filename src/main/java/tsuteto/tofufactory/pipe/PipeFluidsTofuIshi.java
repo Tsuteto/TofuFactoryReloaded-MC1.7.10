@@ -5,8 +5,6 @@ import buildcraft.transport.Pipe;
 import buildcraft.transport.PipeTransportFluids;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
 {
@@ -20,7 +18,7 @@ public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
     @Override
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     @Override

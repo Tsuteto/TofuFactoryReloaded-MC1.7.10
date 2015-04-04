@@ -4,8 +4,6 @@ import buildcraft.api.core.IIconProvider;
 import buildcraft.transport.pipes.PipeFluidsWood;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipeFluidsZunda extends PipeFluidsWood
 {
@@ -24,7 +22,7 @@ public class PipeFluidsZunda extends PipeFluidsWood
     @Override
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     @Override

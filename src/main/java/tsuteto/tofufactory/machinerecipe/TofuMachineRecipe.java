@@ -1,9 +1,10 @@
 package tsuteto.tofufactory.machinerecipe;
 
 import net.minecraft.item.ItemStack;
-import tsuteto.tofufactory.integration.TFIntegrationManager;
 import tsuteto.tofufactory.api.recipes.RecipeManagers;
-import tsuteto.tofufactory.integration.plugins.PluginGreg;
+import tsuteto.tofufactory.integration.TFIntegrationManager;
+import tsuteto.tofufactory.integration.plugins.PluginGreg5;
+import tsuteto.tofufactory.integration.plugins.PluginGreg6;
 
 public class TofuMachineRecipe
 {
@@ -16,7 +17,18 @@ public class TofuMachineRecipe
 
     public static ItemStack getOreDictStack(ItemStack aOreStack)
     {
-        return TFIntegrationManager.modGT.isReady() ? PluginGreg.getOreDictStack(aOreStack.copy()) : aOreStack;
+        if (TFIntegrationManager.modGT6.isReady())
+        {
+            return PluginGreg6.getOreDictStack(aOreStack.copy());
+        }
+        else if (TFIntegrationManager.modGT5.isReady())
+        {
+            return PluginGreg5.getOreDictStack(aOreStack.copy());
+        }
+        else
+        {
+            return aOreStack;
+        }
     }
 
 

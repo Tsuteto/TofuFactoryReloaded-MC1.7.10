@@ -23,7 +23,10 @@ public class PluginIC2 implements ITFPlugin
     public static ItemStack diamondCuttingBlade;
     public static ItemStack ic2Cell;
 
-    public void init()
+    @Override
+    public void preInit() throws Exception {}
+
+    public void init() throws Exception
     {
         initIc2Items();
         initOriginalItems();

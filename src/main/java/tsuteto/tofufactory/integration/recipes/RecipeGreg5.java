@@ -3,25 +3,18 @@ package tsuteto.tofufactory.integration.recipes;
 import appeng.api.AEApi;
 import appeng.api.util.AEColor;
 import gregtech.api.GregTech_API;
-import gregtech.api.enums.ConfigCategories;
 import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_Recipe;
-import ic2.neiIntegration.core.CentrifugeRecipeHandler;
 import net.minecraft.item.ItemStack;
 import tsuteto.tofu.item.ItemTcMaterials;
-import tsuteto.tofu.item.TcItems;
-import tsuteto.tofufactory.config.TFConfig;
 import tsuteto.tofufactory.core.TFItems;
 import tsuteto.tofufactory.integration.ITFRecipeModule;
-import tsuteto.tofufactory.integration.ITFRecipeModule;
 import tsuteto.tofufactory.integration.TFIntegrationManager;
-import tsuteto.tofufactory.integration.plugins.PluginIC2;
 import tsuteto.tofufactory.item.ItemTFCell;
 import tsuteto.tofufactory.item.ItemTFDust;
 
-public class RecipeGreg implements ITFRecipeModule
+public class RecipeGreg5 implements ITFRecipeModule
 {
-    public void register()
+    public void register() throws Exception
     {
         registerGrinder();
         registerCentrifuge();
@@ -45,7 +38,7 @@ public class RecipeGreg implements ITFRecipeModule
                 ItemTcMaterials.tofuDiamondNugget.getStack(), 2,
                 ItemTFCell.bittern.getStack(2), new ItemStack(TFItems.bakingSoda, 2), null, null, null, null, 50);
 
-        if (TFIntegrationManager.modAppeng.isAvailable())
+        if (TFIntegrationManager.modAE.isAvailable())
         {
             ItemStack meCable = AEApi.instance().parts().partCableCovered.stack(AEColor.White, 1);
             meCable.stackSize = 4;

@@ -7,9 +7,9 @@ import tsuteto.tofufactory.util.TFVector;
 
 import java.util.List;
 
-public class CropEdamameBeans extends TFCropBlock
+public class CropCyclic extends TFCropBlock
 {
-    public CropEdamameBeans(World world, Block block, int meta, TFVector pos)
+    public CropCyclic(World world, Block block, int meta, TFVector pos)
     {
         super(world, block, meta, pos);
     }
@@ -18,7 +18,8 @@ public class CropEdamameBeans extends TFCropBlock
     protected List<ItemStack> harvestBlock(TFVector pos)
     {
         List<ItemStack> harvested = this.block.getDrops(this.world, pos.x, pos.y, pos.z, this.meta, 0);
-        this.world.setBlock(pos.x, pos.y, pos.z, this.block, meta - 2, 2);
+        // The harvested crops produce seeds
+        this.world.setBlock(pos.x, pos.y, pos.z, this.block, 0, 2);
         return harvested;
     }
 }

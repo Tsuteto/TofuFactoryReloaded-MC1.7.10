@@ -2,5 +2,5 @@ package tsuteto.tofufactory.integration;
 
 public interface ITFRecipeModule
 {
-    public void register();
+    public void register() throws Exception;
 }

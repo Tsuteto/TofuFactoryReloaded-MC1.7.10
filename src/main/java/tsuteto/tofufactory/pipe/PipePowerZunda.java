@@ -5,8 +5,6 @@ import buildcraft.transport.PipeTransportPower;
 import buildcraft.transport.pipes.PipePowerWood;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipePowerZunda extends PipePowerWood
 {
@@ -23,7 +21,7 @@ public class PipePowerZunda extends PipePowerWood
 
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     public int getIconIndex(ForgeDirection direction)

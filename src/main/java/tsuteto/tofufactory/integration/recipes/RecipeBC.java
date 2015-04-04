@@ -17,7 +17,7 @@ import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class RecipeBC implements ITFRecipeModule
 {
-    public void register()
+    public void register() throws Exception
     {
         // Refinery Recipes
         RefineryRecipeManager.INSTANCE.addRecipe(TofuFactory.resourceDomain + "noodleSoup", new FluidStack(TFFluids.soupStock, 500), new FluidStack(TcFluids.SOY_SAUCE, 1000), new FluidStack(TFFluids.noodleSoup, 1500), 20, 30);

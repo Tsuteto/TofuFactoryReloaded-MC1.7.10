@@ -109,9 +109,11 @@ item.tofufactory:tube.hellTofu.name=地獄豆腐真空管
 
 for.circuit.Edamame=枝豆畑
 for.circuit.Soybean=大豆畑
+for.circuit.Sesame=胡麻畑
+for.circuit.Sprouts=もやし畑
 for.circuit.Apricot=杏園
-for.circuit.tofuTree=豆腐の木園
-for.circuit.SoybeanHell=地獄豆腐畑
+for.circuit.TofuTree=豆腐の木園
+for.circuit.SoybeanHell=地獄大豆畑
 
 # TC
 item.tofufactory:tofuFocus.name=豆腐の杖星

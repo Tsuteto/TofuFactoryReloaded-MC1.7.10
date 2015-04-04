@@ -14,6 +14,9 @@ public class PluginMT implements ITFPlugin
     public static Item Item_dough;
     public static Item Item_cheese;
 
+    @Override
+    public void preInit() throws Exception {}
+
     public void init() throws Exception
     {
         registerOreDictionary();

@@ -25,7 +25,7 @@ import tsuteto.tofufactory.item.ItemTFFoodSet;
 
 public class RecipeFFM implements ITFRecipeModule
 {
-    public void register()
+    public void register() throws Exception
     {
         registerForCrafting();
         registerInCarpenter();

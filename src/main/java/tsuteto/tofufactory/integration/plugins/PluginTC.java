@@ -9,7 +9,11 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
-import tsuteto.tofu.item.*;
+import tsuteto.tofu.block.TcBlocks;
+import tsuteto.tofu.item.ItemFoodSet;
+import tsuteto.tofu.item.ItemFoodSetStick;
+import tsuteto.tofu.item.ItemTcMaterials;
+import tsuteto.tofu.item.TcItems;
 import tsuteto.tofufactory.core.TFItems;
 import tsuteto.tofufactory.core.TofuFactory;
 import tsuteto.tofufactory.integration.ITFPlugin;
@@ -18,7 +22,6 @@ import tsuteto.tofufactory.item.ItemTFFocus;
 import tsuteto.tofufactory.item.ItemTFFoodSet;
 import tsuteto.tofufactory.item.ItemTofuIngot;
 import tsuteto.tofufactory.registry.ItemRegister;
-import tsuteto.tofu.block.TcBlocks;
 
 public class PluginTC implements ITFPlugin
 {
@@ -26,7 +29,10 @@ public class PluginTC implements ITFPlugin
     public static String RESEARCH_TOFU = "Tofu";
     public static Item tofuFocus;
 
-    public void init()
+    @Override
+    public void preInit() throws Exception {}
+
+    public void init() throws Exception
     {
         initAspect();
         registerAspectEntity();

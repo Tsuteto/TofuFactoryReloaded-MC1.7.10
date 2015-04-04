@@ -1,15 +1,18 @@
 package tsuteto.tofufactory.integration.plugins;
 
-import gregtech.api.GregTech_API;
+import gregapi.oredict.OreDictManager;
 import ic2.api.crops.CropCard;
 import net.minecraft.item.ItemStack;
 import tsuteto.tofufactory.integration.ITFPlugin;
 
-public class PluginGreg implements ITFPlugin
+public class PluginGreg6 implements ITFPlugin
 {
     public static CropCard daizu;
 
-    public void init()
+    @Override
+    public void preInit() throws Exception {}
+
+    public void init() throws Exception
     {
         registerOreDictionaryGreg();
     }
@@ -25,6 +28,6 @@ public class PluginGreg implements ITFPlugin
 
     public static ItemStack getOreDictStack(ItemStack aOreStack)
     {
-        return GregTech_API.getUnificatedOreDictStack(aOreStack);
+        return OreDictManager.INSTANCE.getStack(true, aOreStack);
     }
 }

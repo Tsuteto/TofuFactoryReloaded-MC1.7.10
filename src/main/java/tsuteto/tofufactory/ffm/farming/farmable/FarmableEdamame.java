@@ -6,11 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import tsuteto.tofufactory.util.TFVector;
-import tsuteto.tofufactory.ffm.farming.crop.CropEdamameBeans;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.item.TcItems;
-import tsuteto.tofufactory.ffm.farming.crop.CropEdamameBeans;
+import tsuteto.tofufactory.ffm.farming.crop.CropCyclic;
 import tsuteto.tofufactory.util.TFVector;
 
 public class FarmableEdamame implements IFarmable
@@ -29,7 +27,7 @@ public class FarmableEdamame implements IFarmable
         return world.isAirBlock(x, y, z) ? null
                 : (world.getBlock(x, y, z) != block ? null
                 : (world.getBlockMetadata(x, y, z) < mature ? null
-                : new CropEdamameBeans(world, block, world.getBlockMetadata(x, y, z), new TFVector(x, y, z))));
+                : new CropCyclic(world, block, world.getBlockMetadata(x, y, z), new TFVector(x, y, z))));
     }
 
     public boolean isGermling(ItemStack itemstack)

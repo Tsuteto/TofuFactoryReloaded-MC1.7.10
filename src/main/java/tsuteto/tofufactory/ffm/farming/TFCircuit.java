@@ -11,4 +11,5 @@ public abstract class TFCircuit implements ICircuit
     public static ICircuit farmTofuTree;
     public static ICircuit farmSesameManual;
     public static ICircuit farmSoybeanHell;
+    public static ICircuit farmSprouts;
 }

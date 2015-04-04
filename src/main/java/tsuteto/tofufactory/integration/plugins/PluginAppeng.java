@@ -7,7 +7,10 @@ import tsuteto.tofufactory.integration.ITFPlugin;
 
 public class PluginAppeng implements ITFPlugin
 {
-    public void init()
+    @Override
+    public void preInit() throws Exception {}
+
+    public void init() throws Exception
     {
         registerOreDictionary();
     }

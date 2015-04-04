@@ -109,8 +109,10 @@ item.tofufactory:tube.hellTofu.name=Hell Tofu Electron Tube
 
 for.circuit.Edamame=Edamame Farm
 for.circuit.Soybean=Soybean Farm
+for.circuit.Sesame=Sesame Farm
+for.circuit.Sprouts=Sprout Farm
 for.circuit.Apricot=Apricot Plantation
-for.circuit.tofuTree=Tofu Tree Plantation
+for.circuit.TofuTree=Tofu Tree Plantation
 for.circuit.SoybeanHell=Hell Soybean Farm
 
 # TC

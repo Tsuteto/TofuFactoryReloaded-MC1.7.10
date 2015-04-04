@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class RecipeIC2 implements ITFRecipeModule
 {
-    public void register()
+    public void register() throws Exception
     {
         registerCrafting();
         registerMacerator();

@@ -9,6 +9,10 @@ import tsuteto.tofufactory.core.TofuFactory;
 
 public class TFPipeIconProvider implements IIconProvider
 {
+    public static final TFPipeIconProvider INSTANCE = new TFPipeIconProvider();
+
+    private TFPipeIconProvider() {}
+
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int pipeIconIndex)
     {

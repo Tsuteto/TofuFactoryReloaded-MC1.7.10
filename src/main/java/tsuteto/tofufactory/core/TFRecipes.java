@@ -7,9 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import tsuteto.tofu.api.recipe.TcOreDic;
-import tsuteto.tofufactory.api.recipes.RecipeManagers;
 import tsuteto.tofu.item.ItemTcMaterials;
+import tsuteto.tofufactory.api.recipes.RecipeManagers;
 import tsuteto.tofufactory.block.BlockTofuMetal;
 import tsuteto.tofufactory.item.*;
 
@@ -60,7 +59,7 @@ public class TFRecipes
                 'x', "blockTfMachineCase",
                 'y', "gearMithrilTofu",
                 'z', Items.flint,
-                'a', "craftingCircuitTier04");
+                'a', "craftingMagicCircuit");
         addShapedRecipe(new ItemStack(TFItems.tofuCompactorIdle, 1),
                 "z z",
                 "yay",
@@ -68,7 +67,7 @@ public class TFRecipes
                 'x', "blockTfMachineCase",
                 'y', "gearMithrilTofu",
                 'z', Blocks.stone,
-                'a', "craftingCircuitTier04");
+                'a', "craftingMagicCircuit");
         addShapedRecipe(new ItemStack(TFItems.tofuCuttingMachineIdle, 1),
                 "z z",
                 "yay",
@@ -76,7 +75,7 @@ public class TFRecipes
                 'x', "blockTfMachineCase",
                 'y', "gearMithrilTofu",
                 'z', "craftingDiamondBlade",
-                'a', "craftingCircuitTier04");
+                'a', "craftingMagicCircuit");
         addShapedRecipe(new ItemStack(Items.cake, 1),
                 "xxx",
                 "yzy",

@@ -6,6 +6,9 @@ import tsuteto.tofufactory.integration.craftguide.CraftGuidePlugin;
 public class PluginCraftGuide implements ITFPlugin
 {
     @Override
+    public void preInit() throws Exception {}
+
+    @Override
     public void init() throws Exception
     {
         new CraftGuidePlugin().load();

@@ -4,7 +4,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.ModMetadata;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -19,9 +18,9 @@ import tsuteto.tofufactory.achievement.TFTriggerManager;
 import tsuteto.tofufactory.config.TFConfig;
 import tsuteto.tofufactory.fluid.TFFluids;
 import tsuteto.tofufactory.gui.TFGuiHandler;
+import tsuteto.tofufactory.integration.ModIDs;
 import tsuteto.tofufactory.integration.TFIntegrationManager;
 import tsuteto.tofufactory.machinerecipe.TofuMachineRecipe;
-import tsuteto.tofufactory.proxy.CommonProxy;
 import tsuteto.tofufactory.proxy.TFIconTexture;
 import tsuteto.tofufactory.registry.BlockRegister;
 import tsuteto.tofufactory.registry.ItemRegister;
@@ -33,13 +32,24 @@ import tsuteto.tofufactory.world.WorldGeneratorHandler;
     modid = TofuFactory.modId,
     name = "TofuFactory Reloaded",
     version = TofuFactory.version,
-    dependencies = "required-after:TofuCraft;required-after:BuildCraft|Core",
+    dependencies = "required-after:TofuCraft"
+            + ";after:" + ModIDs.BC
+            + ";after:" + ModIDs.FFM
+            + ";after:" + ModIDs.IC2
+            + ";after:" + ModIDs.FC
+            + ";after:" + ModIDs.GT5
+            + ";after:" + ModIDs.GT6
+            + ";after:" + ModIDs.MT
+            + ";after:" + ModIDs.Bamboo
+            + ";after:" + ModIDs.AE
+            + ";after:" + ModIDs.TC
+            + ";after:" + ModIDs.TCon,
     acceptedMinecraftVersions = "[1.7.10,1.8)"
 )
 public class TofuFactory
 {
     public static final String modId = "TofuFactory";
-    public static final String version = "1.0.2-MC1.7.10";
+    public static final String version = "1.1.0-MC1.7.10";
     public static final String resourceDomain = "tofufactory:";
     public static final TFLog log = new TFLog(TofuFactory.modId, Boolean.valueOf(System.getProperty("tofufactory.debug", "false")));
 
@@ -48,12 +58,6 @@ public class TofuFactory
 
     @Mod.Metadata(modId)
     public ModMetadata modMetadata;
-
-    @SidedProxy(
-        clientSide = "tsuteto.tofufactory.proxy.ClientProxy",
-        serverSide = "tsuteto.tofufactory.proxy.CommonProxy"
-    )
-    public static CommonProxy proxy;
 
     public static final CreativeTabs tabsTofuFactory = new CreativeTabTofuFactory("TofuFactory");
     public static UpdateNotification update = null;
@@ -84,6 +88,8 @@ public class TofuFactory
         TFRecipes.register();
         TFAchievementManager.initAchievement();
 
+        TFIntegrationManager.preInitPlugins();
+
         // Update check!
         if (TFConfig.updateCheck)
         {
@@ -98,16 +104,15 @@ public class TofuFactory
         MinecraftForge.EVENT_BUS.register(new TFTriggerManager());
         GameRegistry.registerWorldGenerator(new WorldGeneratorHandler(), 2);
         TFOreDictionary.registerOreDictionary();
+
+        TFIntegrationManager.initPlugins();
+        TFIntegrationManager.registerRecipes();
+        TFIntegrationManager.assertPluginLoaded();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        TFIntegrationManager.initPlugins();
-
-        TFIntegrationManager.registerRecipes();
-
-        TFIntegrationManager.assertPluginLoaded();
     }
 
     @EventHandler

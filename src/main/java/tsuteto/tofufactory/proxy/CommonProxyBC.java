@@ -1,8 +1,8 @@
 package tsuteto.tofufactory.proxy;
 
-public class CommonProxy
+public class CommonProxyBC
 {
-    public void registerRenderers() {}
+    public void registerIcons() {}
 
     public void registerRenderersBC() {}
 }

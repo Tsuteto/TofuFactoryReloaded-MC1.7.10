@@ -2,41 +2,41 @@ package tsuteto.tofufactory.integration;
 
 import com.google.common.collect.Lists;
 import net.minecraftforge.common.config.Configuration;
-import tsuteto.tofufactory.integration.plugins.*;
-import tsuteto.tofufactory.integration.recipes.*;
 
 import java.util.List;
 
 public class TFIntegrationManager
 {
-    public static final PluginSlot modBuildCraft;
-    public static final PluginSlot modForestry;
+    public static final PluginSlot modBC;
+    public static final PluginSlot modFFM;
     public static final PluginSlot modIC2;
     public static final PluginSlot modFC;
-    public static final PluginSlot modGT;
+    public static final PluginSlot modGT5;
+    public static final PluginSlot modGT6;
     public static final PluginSlot modMT;
     public static final PluginSlot modBamboo;
-    public static final PluginSlot modAppeng;
+    public static final PluginSlot modAE;
     public static final PluginSlot modTC;
-    public static final PluginSlot modTConstruct;
-    public static final PluginSlot modCraftGuide;
+    public static final PluginSlot modTCon;
+    public static final PluginSlot modCG;
 
     private static List<PluginSlot> slotList = Lists.newArrayList();
 
     static
     {
-        modBuildCraft   = registerPlugin(new PluginSlotRequired("BuildCraft", "BuildCraft|Core", PluginBC.class).addRecipes(RecipeBC.class));
-        modForestry     = registerPlugin(new PluginSlot("Forestry", "Forestry", PluginFFM.class).addRecipes(RecipeFFM.class));
-        modIC2          = registerPlugin(new PluginSlot("IC2", "IC2", PluginIC2.class).addRecipes(RecipeIC2.class));
-        modFC           = registerPlugin(new PluginSlot("FarmCraftory", "FarmCraftory", PluginFC.class)); // 1.6.2 yet
-        modGT           = registerPlugin(new PluginSlot("GregTech", "gregtech", PluginGreg.class).addRecipes(RecipeGreg.class));
-        modMT           = registerPlugin(new PluginSlot("MapleTree", "mod_ecru_MapleTree", PluginMT.class));
-        modBamboo       = registerPlugin(new PluginSlot("BambooMod", "BambooMod", PluginBamboo.class));
-        modAppeng       = registerPlugin(new PluginSlot("AppliedEnergistics", "appliedenergistics2", PluginAppeng.class).addRecipes(RecipeAppeng.class));
-        modTC           = registerPlugin(new PluginSlot("Thaumcraft", "Thaumcraft", PluginTC.class).addRecipes(RecipeTC.class));
-        modTConstruct   = registerPlugin(new PluginSlot("TConstruct", "TConstruct", PluginTcon.class).addRecipes(RecipeTcon.class));
+        modBC       = registerPlugin(new PluginSlot("BuildCraft", ModIDs.BC, "BC").withRecipes());
+        modFFM      = registerPlugin(new PluginSlot("Forestry", ModIDs.FFM, "FFM").withRecipes());
+        modIC2      = registerPlugin(new PluginSlot("IC2", ModIDs.IC2, "IC2").withRecipes());
+        modFC       = registerPlugin(new PluginSlot("FarmCraftory", ModIDs.FC, "FC")); // 1.6.2 yet
+        modGT5      = registerPlugin(new PluginSlotGT5("GregTech5", ModIDs.GT5, "Greg5").withRecipes());
+        modGT6      = registerPlugin(new PluginSlot("GregTech6", ModIDs.GT6, "Greg6").withRecipes());
+        modMT       = registerPlugin(new PluginSlot("MapleTree", ModIDs.MT, "MT"));
+        modBamboo   = registerPlugin(new PluginSlot("BambooMod", ModIDs.Bamboo, "Bamboo"));
+        modAE       = registerPlugin(new PluginSlot("AppliedEnergistics", ModIDs.AE, "Appeng").withRecipes());
+        modTC       = registerPlugin(new PluginSlot("Thaumcraft", ModIDs.TC, "TC").withRecipes());
+        modTCon     = registerPlugin(new PluginSlot("TConstruct", ModIDs.TCon, "Tcon").withRecipes());
 
-        modCraftGuide   = registerPlugin(new PluginSlot("CraftGuide", "craftguide", PluginCraftGuide.class));
+        modCG       = registerPlugin(new PluginSlot("CraftGuide", ModIDs.CG, "CraftGuide"));
     }
 
     private static PluginSlot registerPlugin(PluginSlot slot)
@@ -53,11 +53,20 @@ public class TFIntegrationManager
         }
     }
 
-    public static void initPlugins()
+    public static void preInitPlugins()
     {
         for (PluginSlot slot : slotList)
         {
             slot.callPlugin();
+            slot.callPreInit();
+        }
+    }
+
+    public static void initPlugins()
+    {
+        for (PluginSlot slot : slotList)
+        {
+            slot.callInit();
         }
     }
 
@@ -76,5 +85,4 @@ public class TFIntegrationManager
             slot.assertPluginLoaded();
         }
     }
-
 }

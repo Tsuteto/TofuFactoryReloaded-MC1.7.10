@@ -5,8 +5,6 @@ import buildcraft.transport.Pipe;
 import buildcraft.transport.PipeTransportPower;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipePowerTofuIshi extends Pipe<PipeTransportPower>
 {
@@ -18,7 +16,7 @@ public class PipePowerTofuIshi extends Pipe<PipeTransportPower>
 
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     public int getIconIndex(ForgeDirection direction)

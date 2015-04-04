@@ -1,21 +1,22 @@
 package tsuteto.tofufactory.integration.plugins;
 
 import buildcraft.BuildCraftTransport;
-import buildcraft.api.core.IIconProvider;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.PipeTransportFluids;
 import buildcraft.transport.PipeTransportPower;
+import buildcraft.transport.TransportProxyClient;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.Item;
-import tsuteto.tofufactory.pipe.TFPipeIconProvider;
+import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.client.event.TextureStitchEvent;
+import net.minecraftforge.common.MinecraftForge;
 import tsuteto.tofufactory.core.TofuFactory;
 import tsuteto.tofufactory.integration.ITFPlugin;
-import tsuteto.tofufactory.pipe.PipeFluidsTofuIshi;
-import tsuteto.tofufactory.pipe.PipeFluidsZunda;
-import tsuteto.tofufactory.pipe.PipeItemsTofuIshi;
-import tsuteto.tofufactory.pipe.PipeItemsZunda;
-import tsuteto.tofufactory.pipe.PipePowerTofuIshi;
-import tsuteto.tofufactory.pipe.PipePowerZunda;
+import tsuteto.tofufactory.pipe.*;
 
 public class PluginBC implements ITFPlugin
 {
@@ -25,9 +26,17 @@ public class PluginBC implements ITFPlugin
     public static Item pipeItemsZunda;
     public static Item pipeFluidsZunda;
     public static Item pipePowerZunda;
-    public static IIconProvider pipeIconProvider = new TFPipeIconProvider();
 
-    public void init()
+    @Override
+    public void preInit() throws Exception
+    {
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
+        {
+            MinecraftForge.EVENT_BUS.register(new IconTexture());
+        }
+    }
+
+    public void init() throws Exception
     {
         // Pipe Items
         pipeItemsTofuIshi = BlockGenericPipe.registerPipe(PipeItemsTofuIshi.class, CreativeTabBuildCraft.PIPES);
@@ -52,6 +61,36 @@ public class PluginBC implements ITFPlugin
         pipePowerZunda = BlockGenericPipe.registerPipe(PipePowerZunda.class, CreativeTabBuildCraft.PIPES);
         pipePowerZunda.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.power.zunda").setCreativeTab(TofuFactory.tabsTofuFactory);
 
-        TofuFactory.proxy.registerRenderersBC();
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
+        {
+            this.registerRenderersBC();
+        }
     }
+
+    @SideOnly(Side.CLIENT)
+    public void registerRenderersBC()
+    {
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipeItemsTofuIshi, TransportProxyClient.pipeItemRenderer);
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipeFluidsTofuIshi, TransportProxyClient.pipeItemRenderer);
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipePowerTofuIshi, TransportProxyClient.pipeItemRenderer);
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipeItemsZunda, TransportProxyClient.pipeItemRenderer);
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipeFluidsZunda, TransportProxyClient.pipeItemRenderer);
+        MinecraftForgeClient.registerItemRenderer(PluginBC.pipePowerZunda, TransportProxyClient.pipeItemRenderer);
+        //Localization.addLocalization("/lang/tofufactory/pipes/", "en_US");
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static class IconTexture
+    {
+        @SubscribeEvent
+        public void textureHook(TextureStitchEvent.Pre event)
+        {
+            int type = event.map.getTextureType();
+            if (type == 0)
+            {
+                TFPipeIconProvider.INSTANCE.registerIcons(event.map);
+            }
+        }
+    }
+
 }

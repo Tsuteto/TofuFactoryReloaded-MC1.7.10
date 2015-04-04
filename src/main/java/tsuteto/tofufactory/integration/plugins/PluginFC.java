@@ -21,6 +21,9 @@ public class PluginFC implements ITFPlugin
     public static Item strawberryItem;
     public static Item pineappleItem;
 
+    @Override
+    public void preInit() throws Exception {}
+
     public void init() throws Exception
     {
         registerOreDictionary();

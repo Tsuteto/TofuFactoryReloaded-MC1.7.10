@@ -8,7 +8,6 @@ import net.minecraft.util.IIcon;
 import net.minecraftforge.client.event.TextureStitchEvent.Pre;
 import tsuteto.tofu.TofuCraftCore;
 import tsuteto.tofufactory.core.TofuFactory;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 @SideOnly(Side.CLIENT)
 public class TFIconTexture
@@ -23,10 +22,10 @@ public class TFIconTexture
     public void textureHook(Pre event)
     {
         int type = event.map.getTextureType();
-        if (type == 0)
-        {
-            PluginBC.pipeIconProvider.registerIcons(event.map);
-        }
+//        if (type == 0)
+//        {
+//            TFPipeIconProvider.INSTANCE.registerIcons(event.map);
+//        }
 
         if (type == 1)
         {

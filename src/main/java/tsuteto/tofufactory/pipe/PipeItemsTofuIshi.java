@@ -7,8 +7,6 @@ import buildcraft.transport.TravelingItem;
 import buildcraft.transport.pipes.events.PipeEventItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.ForgeDirection;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
-import tsuteto.tofufactory.integration.plugins.PluginBC;
 
 public class PipeItemsTofuIshi extends Pipe<PipeTransportItems> //implements IPipeTransportItemsHook
 {
@@ -29,7 +27,7 @@ public class PipeItemsTofuIshi extends Pipe<PipeTransportItems> //implements IPi
     @Override
     public IIconProvider getIconProvider()
     {
-        return PluginBC.pipeIconProvider;
+        return TFPipeIconProvider.INSTANCE;
     }
 
     @Override

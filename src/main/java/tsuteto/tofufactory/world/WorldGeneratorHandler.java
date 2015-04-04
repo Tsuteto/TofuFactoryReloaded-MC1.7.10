@@ -49,6 +49,17 @@ public class WorldGeneratorHandler implements IWorldGenerator
                 (new WorldGenMinable(TFItems.oreMithrilTofu, 4)).generate(world, random, randomPosX, randomPosY, randomPosZ);
             }
         }
+        for (int i = 0; i < 8; ++i)
+        {
+            int randomPosX = chunkX + random.nextInt(16);
+            int randomPosY = 90 + random.nextInt(38) - random.nextInt(38);
+            int randomPosZ = chunkZ + random.nextInt(16);
+            BiomeGenBase biome = world.getBiomeGenForCoords(randomPosX, randomPosZ);
+            if (!biome.getEnableSnow() && world.canSnowAtBody(randomPosX, randomPosY, randomPosZ, false))
+            {
+                (new WorldGenMinable(TFItems.oreMithrilTofu, 4)).generate(world, random, randomPosX, randomPosY, randomPosZ);
+            }
+        }
     }
 
     private void generateNether(World world, Random random, int chunkX, int chunkZ) {}
@@ -56,7 +67,7 @@ public class WorldGeneratorHandler implements IWorldGenerator
     private void generateTofu(World world, Random random, int chunkX, int chunkZ)
     {
         // Tofu bees need FFM
-        if (TFIntegrationManager.modForestry.isReady())
+        if (TFIntegrationManager.modFFM.isReady())
         {
             if (random.nextInt(12) == 0)
             {

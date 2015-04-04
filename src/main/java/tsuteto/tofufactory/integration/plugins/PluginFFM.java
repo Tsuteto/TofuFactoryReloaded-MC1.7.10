@@ -44,7 +44,10 @@ public class PluginFFM implements ITFPlugin
 
 //    public static Item FFMTube;
 
-    public void init()
+    @Override
+    public void preInit() throws Exception {}
+
+    public void init() throws Exception
     {
         initItems();
         initTubes();

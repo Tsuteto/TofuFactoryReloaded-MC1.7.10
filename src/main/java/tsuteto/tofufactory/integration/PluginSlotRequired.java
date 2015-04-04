@@ -4,9 +4,9 @@ import net.minecraftforge.common.config.Configuration;
 
 public class PluginSlotRequired extends PluginSlot
 {
-    public PluginSlotRequired(String name, String modId, Class<? extends ITFPlugin> pluginClass)
+    public PluginSlotRequired(String name, String modId, String pluginName)
     {
-        super(name, modId, pluginClass);
+        super(name, modId, pluginName);
     }
 
     @Override
