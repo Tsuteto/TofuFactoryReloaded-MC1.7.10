@@ -9,6 +9,7 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
+import tsuteto.tofu.TofuCraftCore;
 import tsuteto.tofu.block.TcBlocks;
 import tsuteto.tofu.item.ItemFoodSet;
 import tsuteto.tofu.item.ItemFoodSetStick;
@@ -17,20 +18,33 @@ import tsuteto.tofu.item.TcItems;
 import tsuteto.tofufactory.core.TFItems;
 import tsuteto.tofufactory.core.TofuFactory;
 import tsuteto.tofufactory.integration.ITFPlugin;
-import tsuteto.tofufactory.item.ItemTFDust;
-import tsuteto.tofufactory.item.ItemTFFocus;
-import tsuteto.tofufactory.item.ItemTFFoodSet;
-import tsuteto.tofufactory.item.ItemTofuIngot;
+import tsuteto.tofufactory.item.*;
 import tsuteto.tofufactory.registry.ItemRegister;
 
 public class PluginTC implements ITFPlugin
 {
     public static Aspect TOFU;
     public static String RESEARCH_TOFU = "Tofu";
-    public static Item tofuFocus;
+    public static Item focusKinu;
+    public static Item focusSoy;
+    public static Item focusTofuBlast;
 
     @Override
-    public void preInit() throws Exception {}
+    public void preInit() throws Exception
+    {
+        focusKinu = ItemRegister.of("tofuFocus", new ItemFocusKinuTofu())
+                .withResource("wandFocus_tofu1")
+                .register()
+                .setCreativeTab(TofuFactory.tabsTofuFactory);
+        focusSoy = ItemRegister.of("focusSoy", new ItemFocusSoy())
+                .withResource("wandFocus_soy")
+                .register()
+                .setCreativeTab(TofuFactory.tabsTofuFactory);
+        focusTofuBlast = ItemRegister.of("focusTofuBlast", new ItemFocusTofuBlast())
+                .withResource("wandFocus_tofu2")
+                .register()
+                .setCreativeTab(TofuFactory.tabsTofuFactory);
+    }
 
     public void init() throws Exception
     {
@@ -39,12 +53,14 @@ public class PluginTC implements ITFPlugin
         registerAspectBlock();
         registerAspectItem();
 
+        if (TofuCraftCore.metadata.version.indexOf("2.") == 0)
+        {
+            registerAspect20();
+        }
+
         ResearchCategories.registerCategory(RESEARCH_TOFU,
                 new ResourceLocation("tofufactory", "textures/items/smokeTofu.png"),
                 new ResourceLocation("tofufactory", "textures/gui/guiTofuKinu.png"));
-
-        tofuFocus = ItemRegister.of("tofuFocus", new ItemTFFocus()).register()
-                .setCreativeTab(TofuFactory.tabsTofuFactory);
     }
 
     private void initAspect()
@@ -646,6 +662,17 @@ public class PluginTC implements ITFPlugin
 
         $(TcItems.tofuHoe)
                 .add(TOFU, 16).add(Aspect.HARVEST, 3)
+                .register();
+    }
+
+    private void registerAspect20()
+    {
+        $(TcItems.foodSet).withMetadata(ItemFoodSet.tofuSteak.id)
+            .add(TOFU, 1).add(Aspect.FIRE, 2).add(Aspect.HUNGER, 2)
+            .register();
+
+        $(TcItems.foodSet).withMetadata(ItemFoodSet.tofuMinced.id)
+                .add(TOFU, 1).add(Aspect.WATER, 2).add(Aspect.ENTROPY, 1)
                 .register();
     }
     

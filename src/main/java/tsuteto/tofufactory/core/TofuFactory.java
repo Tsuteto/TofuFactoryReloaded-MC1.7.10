@@ -49,7 +49,7 @@ import tsuteto.tofufactory.world.WorldGeneratorHandler;
 public class TofuFactory
 {
     public static final String modId = "TofuFactory";
-    public static final String version = "1.1.0-MC1.7.10";
+    public static final String version = "1.2.0-MC1.7.10";
     public static final String resourceDomain = "tofufactory:";
     public static final TFLog log = new TFLog(TofuFactory.modId, Boolean.valueOf(System.getProperty("tofufactory.debug", "false")));
 

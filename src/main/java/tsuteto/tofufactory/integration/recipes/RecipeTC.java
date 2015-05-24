@@ -12,6 +12,7 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import tsuteto.tofu.block.TcBlocks;
+import tsuteto.tofu.item.ItemTcMaterials;
 import tsuteto.tofu.item.TcItems;
 import tsuteto.tofufactory.integration.ITFRecipeModule;
 import tsuteto.tofufactory.integration.plugins.PluginTC;
@@ -22,6 +23,8 @@ public class RecipeTC implements ITFRecipeModule
 {
     public static final String tofuKinuK = "ArcaneKinuTofu";
     public static final String tofuFocusK = "tofuFocus";
+    public static final String tofuFocus2K = "tofuFocus2";
+    public static final String soyFocusK = "soyFocus";
     public static final String MagicCircuitK = "MagicCircuit";
     public static final String MithrilK = "Mithril";
     public static final String SolK = "Sol";
@@ -29,6 +32,8 @@ public class RecipeTC implements ITFRecipeModule
 
     public static ShapelessArcaneRecipe tofuKinuR;
     public static ShapelessArcaneRecipe tofuFocusR;
+    public static ShapelessArcaneRecipe tofuFocus2R;
+    public static ShapelessArcaneRecipe soyFocusR;
     public static ShapelessArcaneRecipe MagicCircuitR;
     public static CrucibleRecipe MithrilR;
     public static CrucibleRecipe SolR;
@@ -49,12 +54,28 @@ public class RecipeTC implements ITFRecipeModule
                 (new AspectList()).add(Aspect.WATER, 2),
                 new ItemStack(TcItems.bucketSoymilk, 1));
 
-        // ArcaneCrafting: Tofu Focus
+        // ArcaneCrafting: Kinu Tofu Focus
         tofuFocusR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 tofuKinuK,
-                new ItemStack(PluginTC.tofuFocus, 1),
-                (new AspectList()).add(PluginTC.TOFU, 2).add(Aspect.WATER, 2),
+                new ItemStack(PluginTC.focusKinu, 1),
+                (new AspectList()).add(Aspect.WATER, 30).add(Aspect.ORDER, 10),
                 new ItemStack(TcBlocks.tofuKinu, 1));
+
+        // ArcaneCrafting: Tofu Blast Focus
+        tofuFocus2R = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                tofuKinuK,
+                new ItemStack(PluginTC.focusTofuBlast, 1),
+                (new AspectList()).add(Aspect.EARTH, 40).add(Aspect.FIRE, 40).add(Aspect.ENTROPY, 25),
+                new ItemStack(TcBlocks.tofuMomen, 1), new ItemStack(TcBlocks.tofuMomen, 1), new ItemStack(TcBlocks.tofuMomen, 1),
+                new ItemStack(TcBlocks.tofuMomen, 1), ItemTcMaterials.activatedHellTofu.getStack(), new ItemStack(TcBlocks.tofuMomen, 1),
+                new ItemStack(TcBlocks.tofuMomen, 1), new ItemStack(TcBlocks.tofuMomen, 1), new ItemStack(TcBlocks.tofuMomen, 1));
+
+        // ArcaneCrafting: Soy Focus
+        soyFocusR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                tofuKinuK,
+                new ItemStack(PluginTC.focusSoy, 1),
+                (new AspectList()).add(Aspect.EARTH, 20).add(Aspect.AIR, 50).add(Aspect.ENTROPY, 25),
+                new ItemStack(TcItems.fukumame, 1));
 
         // ArcaneCrafting: Magic Circuit
         MagicCircuitR = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
@@ -100,9 +121,19 @@ public class RecipeTC implements ITFRecipeModule
                         new ResearchPage(tofuKinuR)).setParents("TofuAspect"));
 
         ResearchCategories.addResearch((new ResearchItem(tofuFocusK, PluginTC.RESEARCH_TOFU,
-                (new AspectList()).add(PluginTC.TOFU, 2).add(Aspect.ENERGY, 1).add(Aspect.WATER, 2), -1, 2, 1, new ItemStack(PluginTC.tofuFocus, 1)))
+                (new AspectList()).add(PluginTC.TOFU, 16).add(Aspect.ENERGY, 4).add(Aspect.WATER, 2), -1, 2, 1, new ItemStack(PluginTC.focusKinu, 1)))
                 .setPages(new ResearchPage(tofuFocusK, "tc.research_page." + tofuFocusK),
-                        new ResearchPage(tofuFocusR)).setParents(new String[] {"TofuAspect"}).setSpecial());
+                        new ResearchPage(tofuFocusR)).setParents("TofuAspect"));
+
+        ResearchCategories.addResearch((new ResearchItem(tofuFocus2K, PluginTC.RESEARCH_TOFU,
+                (new AspectList()).add(PluginTC.TOFU, 64).add(Aspect.FIRE, 24).add(Aspect.ENTROPY, 18), 0, 4, 1, new ItemStack(PluginTC.focusTofuBlast, 1)))
+                .setPages(new ResearchPage(tofuFocus2K, "tc.research_page." + tofuFocus2K),
+                        new ResearchPage(tofuFocus2R)).setParents(tofuFocusK).setSpecial());
+
+        ResearchCategories.addResearch((new ResearchItem(soyFocusK, PluginTC.RESEARCH_TOFU,
+                (new AspectList()).add(PluginTC.TOFU, 32).add(Aspect.AURA, 32).add(Aspect.FLIGHT, 24), -2, 4, 1, new ItemStack(PluginTC.focusSoy, 1)))
+                .setPages(new ResearchPage(soyFocusK, "tc.research_page." + soyFocusK),
+                        new ResearchPage(soyFocusR)).setParents(tofuFocusK).setSpecial());
 
         ResearchCategories.addResearch((new ResearchItem(MithrilK, PluginTC.RESEARCH_TOFU,
                 (new AspectList()).add(PluginTC.TOFU, 8).add(Aspect.COLD, 8).add(Aspect.MAGIC, 1), 2, -1, 1, ItemTofuIngot.mithrilTofu.getStack()))

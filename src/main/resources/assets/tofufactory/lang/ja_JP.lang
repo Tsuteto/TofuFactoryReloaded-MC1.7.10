@@ -116,7 +116,9 @@ for.circuit.TofuTree=豆腐の木園
 for.circuit.SoybeanHell=地獄大豆畑
 
 # TC
-item.tofufactory:tofuFocus.name=豆腐の杖星
+item.tofufactory:wandFocus_tofu1.name=豆腐の杖星
+item.tofufactory:wandFocus_tofu2.name=豆腐錬成の杖星
+item.tofufactory:wandFocus_soy.name=福豆の杖星
 
 tc.research_category.Tofu=豆腐
 tc.aspect.tofu=豆腐, 神秘
@@ -129,7 +131,13 @@ tc.research_text.ArcaneKinuTofu=東洋神秘の素材
 tc.research_page.ArcaneKinuTofu=  豆腐の基本素材となる絹ごし豆腐。ソリッドな白さで柔らかく繊細な美しさがある。豆乳に水魔法による特定の刺激を加えることで凝固する。
 tc.research_name.tofuFocus=豆腐の杖星
 tc.research_text.tofuFocus=豆腐の魔法
-tc.research_page.tofuFocus=  豆腐はついに秘めた魔力の片鱗を見せてくれた。あなた次第でさらなる魔力を引き出されることが期待されよう。
+tc.research_page.tofuFocus=  豆腐はついに秘めた魔力の片鱗を見せてくれた。あなた次第でさらなる魔力を引き出されることが期待されよう。この杖星は、フィールドの豆乳に使用するとにがりの効果を与え、豆腐に変化させる。
+tc.research_name.tofuFocus2=豆腐錬成の杖星
+tc.research_text.tofuFocus2=豆腐錬成
+tc.research_page.tofuFocus2=  いくらかの犠牲が必要だが、あなたは豆腐の錬成に成功した。生け贄さえあれば、どこでも錬成される豆腐にありつける。
+tc.research_name.soyFocus=福豆の杖星
+tc.research_text.soyFocus=祝福された大豆
+tc.research_page.soyFocus=  あなたは豆腐の研究を進めるうち、大豆の存在に行き着いた。大豆こそ豆腐の源であるという真理を知った時、大豆が神々の祝福を受け、次々と沸き出でてきた。これは悪魔を退ける力となるだろう。
 tc.research_name.Mithril=ミスリル豆腐
 tc.research_text.Mithril=豆腐のような魔法のような
 tc.research_page.Mithril=豆腐のように白く柔らかい金属。ミスリルというだけに魔法の力を秘めている。
@@ -152,4 +160,4 @@ achievement.tofufactory:magicPowder.desc=機械でミスリル鉱石を砕こう
 # Update
 tofufactory.update.server=豆腐Factory Reloaded %1$sに更新しました! ダウンロード: %2$s
 tofufactory.update.client=§e豆腐Factory Reloaded§r §a%1$s§rに更新しました! %2$s
-tofufactory.update.link=§こちらからダウンロード§r
+tofufactory.update.link=§nこちらからダウンロード§r

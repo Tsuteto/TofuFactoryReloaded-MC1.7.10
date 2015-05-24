@@ -1,11 +1,8 @@
 package tsuteto.tofufactory.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -14,15 +11,15 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.ItemFocusBasic;
-import tsuteto.tofu.Settings;
+import thaumcraft.common.items.wands.ItemWandCasting;
 import tsuteto.tofu.block.BlockTofuBase;
 import tsuteto.tofu.block.TcBlocks;
-import tsuteto.tofu.dimension.DimensionTeleportation;
 import tsuteto.tofu.item.TcItems;
+import tsuteto.tofufactory.core.TofuFactory;
 
-public class ItemTFFocus extends ItemFocusBasic
+public class ItemFocusKinuTofu extends ItemFocusBasic
 {
-    public ItemTFFocus()
+    public ItemFocusKinuTofu()
     {
         super();
     }
@@ -31,6 +28,13 @@ public class ItemTFFocus extends ItemFocusBasic
     public int getFocusColor(ItemStack focusStack)
     {
         return 16777215;
+    }
+
+    @Override
+    public void registerIcons(IIconRegister p_94581_1_)
+    {
+        super.registerIcons(p_94581_1_);
+        this.icon = this.itemIcon;
     }
 
     /**
@@ -43,33 +47,21 @@ public class ItemTFFocus extends ItemFocusBasic
         return this;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister par1IconRegister)
-    {
-        super.registerIcons(par1IconRegister);
-        this.icon = TcItems.tofuKinu.getIconFromDamage(0);
-    }
-
     @Override
     public AspectList getVisCost(ItemStack focusStack)
     {
-        return (new AspectList()).add(Aspect.EARTH, 1);
+        return (new AspectList()).add(Aspect.EARTH, 2);
     }
 
     @Override
     public IIcon getFocusDepthLayerIcon(ItemStack focusstack)
     {
-        return this.icon;
+        return TcItems.tofuKinu.getIconFromDamage(0);
     }
 
     @Override
     public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition movingobjectposition)
     {
-        if (player.isSneaking() && !world.isRemote)
-        {
-            ;
-        }
-
         if (movingobjectposition == null)
         {
             return itemstack;
@@ -95,8 +87,13 @@ public class ItemTFFocus extends ItemFocusBasic
 
                 if (var13 != null)
                 {
-                    world.playSoundEffect((double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), (double)((float)var7 + 0.5F), var13.stepSound.getStepResourcePath(), (var13.stepSound.getVolume() + 1.0F) / 2.0F, var13.stepSound.getPitch() * 0.8F);
-                    world.setBlock(var5, var6, var7, var13);
+                    ItemWandCasting wand = (ItemWandCasting)itemstack.getItem();
+                    TofuFactory.log.debug("!player.worldObj.isRemote: " + !player.worldObj.isRemote);
+                    if (wand.consumeAllVis(itemstack, player, this.getVisCost(itemstack), !player.worldObj.isRemote, false))
+                    {
+                        world.playSoundEffect((double) ((float) var5 + 0.5F), (double) ((float) var6 + 0.5F), (double) ((float) var7 + 0.5F), var13.stepSound.getStepResourcePath(), (var13.stepSound.getVolume() + 1.0F) / 2.0F, var13.stepSound.getPitch() * 0.8F);
+                        world.setBlock(var5, var6, var7, var13);
+                    }
                 }
             }
 
@@ -104,26 +101,26 @@ public class ItemTFFocus extends ItemFocusBasic
         }
     }
 
-    private boolean travelDimension(EntityPlayer player)
-    {
-        int currDim = player.worldObj.provider.dimensionId;
-        int travelTo;
-
-        if (currDim == Settings.tofuDimNo)
-        {
-            travelTo = 0;
-        }
-        else
-        {
-            if (currDim != 0)
-            {
-                return false;
-            }
-
-            travelTo = Settings.tofuDimNo;
-        }
-
-        (new DimensionTeleportation()).transferPlayerToDimension((EntityPlayerMP)player, travelTo);
-        return true;
-    }
+//    private boolean travelDimension(EntityPlayer player)
+//    {
+//        int currDim = player.worldObj.provider.dimensionId;
+//        int travelTo;
+//
+//        if (currDim == Settings.tofuDimNo)
+//        {
+//            travelTo = 0;
+//        }
+//        else
+//        {
+//            if (currDim != 0)
+//            {
+//                return false;
+//            }
+//
+//            travelTo = Settings.tofuDimNo;
+//        }
+//
+//        (new DimensionTeleportation()).transferPlayerToDimension((EntityPlayerMP)player, travelTo);
+//        return true;
+//    }
 }

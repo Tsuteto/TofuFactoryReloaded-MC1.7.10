@@ -116,7 +116,9 @@ for.circuit.TofuTree=Tofu Tree Plantation
 for.circuit.SoybeanHell=Hell Soybean Farm
 
 # TC
-item.tofufactory:tofuFocus.name=Tofu Focus
+item.tofufactory:wandFocus_tofu1.name=Wand Focus: Tofu
+item.tofufactory:wandFocus_tofu2.name=Wand Focus: Tofu Transmutation
+item.tofufactory:wandFocus_soy.name=Wand Focus: Divine Beans
 
 tc.research_category.Tofu=Tofu
 tc.aspect.tofu=Tofu, Mystery
@@ -127,9 +129,15 @@ tc.research_page.TofuAspect=  Tofu is a mystery of the Orient. While this has be
 tc.research_name.ArcaneKinuTofu=Kinugoshi Tofu
 tc.research_text.ArcaneKinuTofu=A mystery material from the Orient
 tc.research_page.ArcaneKinuTofu=  Kinugoshi is a basic style of tofu, which is solid white and has a soft and delicate beauty. Soy milk curds by giving a certain kind of shock from water magic.
-tc.research_name.tofuFocus=Tofu Focus
+tc.research_name.tofuFocus=Wand Focus: Tofu
 tc.research_text.tofuFocus=Tofu Magic
-tc.research_page.tofuFocus=  Tofu has finally given you a glimpse of its magic power. You can expect it gives you even more power depending on you.
+tc.research_page.tofuFocus=  Finally Tofu has given you a glimpse of its magic power. You can expect it gives you even more power depending on you. When used against soy milk on the field, this wand focus transforms it into tofu with the effect of bittern.
+tc.research_name.tofuFocus2=Wand Focus: Tofu Transmutation
+tc.research_text.tofuFocus2=Tofu Transmutation
+tc.research_page.tofuFocus2=  Although it needs some sacrifices, you've succeeded in the transmutation of tofu! You can get tofu anytime as long as you offer a sacrifice.
+tc.research_name.soyFocus=Wand Focus: Divine Beans
+tc.research_text.soyFocus=Blessed Soybeans
+tc.research_page.soyFocus=  While you were researching tofu, you had reached the presence of soybeans. When you got a truth that they are the source of tofu; the soybeans blessed by gods welled up one after another before you, which should be a power to repulse demons.
 tc.research_name.Mithril=Mithril Tofu
 tc.research_text.Mithril=Like tofu, like magic
 tc.research_page.Mithril=  A white soft metal like tofu, as it's mithril, holds magic power inside.

@@ -11,7 +11,7 @@ public class ModInfo
         meta.name = "豆腐Factory Reloaded (TofuFactory Reloaded)";
         meta.description = "工業modを中心に連携要素を加える豆腐Craftのアドオンmodです。\n\n"
                 + "An add-on mod for TofuCraft to collaborate mainly with industrial mods.";
-        meta.version = "1.1";
+        meta.version = "1.2";
         meta.credits = "Originally made by shift";
         meta.logoFile = "assets/tofufactory/logo.png";
         meta.url = "http://forum.minecraftuser.jp/viewtopic.php?f=13&t=1014";
