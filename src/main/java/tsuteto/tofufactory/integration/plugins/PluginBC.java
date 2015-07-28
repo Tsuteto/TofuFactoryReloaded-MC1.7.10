@@ -1,7 +1,6 @@
 package tsuteto.tofufactory.integration.plugins;
 
 import buildcraft.BuildCraftTransport;
-import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.transport.BlockGenericPipe;
 import buildcraft.transport.PipeTransportFluids;
 import buildcraft.transport.PipeTransportPower;
@@ -39,26 +38,26 @@ public class PluginBC implements ITFPlugin
     public void init() throws Exception
     {
         // Pipe Items
-        pipeItemsTofuIshi = BlockGenericPipe.registerPipe(PipeItemsTofuIshi.class, CreativeTabBuildCraft.PIPES);
+        pipeItemsTofuIshi = BlockGenericPipe.registerPipe(PipeItemsTofuIshi.class, null);
         pipeItemsTofuIshi.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.item.tofuIshi").setCreativeTab(TofuFactory.tabsTofuFactory);
 
         PipeTransportFluids.fluidCapacities.put(PipeFluidsTofuIshi.class, 2 * BuildCraftTransport.pipeFluidsBaseFlowRate);
-        pipeFluidsTofuIshi = BlockGenericPipe.registerPipe(PipeFluidsTofuIshi.class, CreativeTabBuildCraft.PIPES);
+        pipeFluidsTofuIshi = BlockGenericPipe.registerPipe(PipeFluidsTofuIshi.class, null);
         pipeFluidsTofuIshi.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.fluid.tofuIshi").setCreativeTab(TofuFactory.tabsTofuFactory);
 
         PipeTransportPower.powerCapacities.put(PipePowerTofuIshi.class, 128);
-        pipePowerTofuIshi = BlockGenericPipe.registerPipe(PipePowerTofuIshi.class, CreativeTabBuildCraft.PIPES);
+        pipePowerTofuIshi = BlockGenericPipe.registerPipe(PipePowerTofuIshi.class, null);
         pipePowerTofuIshi.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.power.tofuIshi").setCreativeTab(TofuFactory.tabsTofuFactory);
 
-        pipeItemsZunda = BlockGenericPipe.registerPipe(PipeItemsZunda.class, CreativeTabBuildCraft.PIPES);
+        pipeItemsZunda = BlockGenericPipe.registerPipe(PipeItemsZunda.class, null);
         pipeItemsZunda.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.item.zunda").setCreativeTab(TofuFactory.tabsTofuFactory);
 
         PipeTransportFluids.fluidCapacities.put(PipeFluidsZunda.class, 2 * BuildCraftTransport.pipeFluidsBaseFlowRate);
-        pipeFluidsZunda = BlockGenericPipe.registerPipe(PipeFluidsZunda.class, CreativeTabBuildCraft.PIPES);
+        pipeFluidsZunda = BlockGenericPipe.registerPipe(PipeFluidsZunda.class, null);
         pipeFluidsZunda.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.fluid.zunda").setCreativeTab(TofuFactory.tabsTofuFactory);
 
         PipeTransportPower.powerCapacities.put(PipePowerZunda.class, 128);
-        pipePowerZunda = BlockGenericPipe.registerPipe(PipePowerZunda.class, CreativeTabBuildCraft.PIPES);
+        pipePowerZunda = BlockGenericPipe.registerPipe(PipePowerZunda.class, null);
         pipePowerZunda.setUnlocalizedName(TofuFactory.resourceDomain + "pipe.power.zunda").setCreativeTab(TofuFactory.tabsTofuFactory);
 
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)

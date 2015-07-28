@@ -11,8 +11,7 @@ public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
     public PipeFluidsTofuIshi(Item item)
     {
         super(new PipeTransportFluids(), item);
-        this.transport.flowRate = 20;
-        this.transport.travelDelay = 2;
+        this.transport.initFromPipe(this.getClass());
     }
 
     @Override
@@ -26,4 +25,8 @@ public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
     {
         return TFPipeIconProvider.TYPE.PipeFluidsTofuIshi.ordinal();
     }
+
+    public int x() { return 0; }
+    public int y() { return 0; }
+    public int z() { return 0; }
 }
