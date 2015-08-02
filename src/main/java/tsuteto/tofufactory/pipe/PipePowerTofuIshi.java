@@ -23,4 +23,8 @@ public class PipePowerTofuIshi extends Pipe<PipeTransportPower>
     {
         return TFPipeIconProvider.TYPE.PipePowerTofuIshi.ordinal();
     }
+
+    public int x() { return 0; }
+    public int y() { return 0; }
+    public int z() { return 0; }
 }

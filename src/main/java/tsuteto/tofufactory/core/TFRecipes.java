@@ -10,6 +10,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import tsuteto.tofu.item.ItemTcMaterials;
 import tsuteto.tofufactory.api.recipes.RecipeManagers;
 import tsuteto.tofufactory.block.BlockTofuMetal;
+import tsuteto.tofufactory.integration.TFIntegrationManager;
 import tsuteto.tofufactory.item.*;
 
 public class TFRecipes
@@ -44,6 +45,15 @@ public class TFRecipes
                     "xxx",
                     "xxx",
                     'x', ItemTofuIngot.ingots[i].getStack());
+
+            // Crafting: ingot -> Dust
+            if (!TFIntegrationManager.modIC2.isReady())
+            {
+                addShapedRecipe(ItemTFDust.dusts[i].getStack(),
+                        "xyx",
+                        'x', Items.flint,
+                        'y', ItemTofuIngot.ingots[i].getStack());
+            }
         }
 
         addShapedRecipe(new ItemStack(TFItems.zundaSword, 1),

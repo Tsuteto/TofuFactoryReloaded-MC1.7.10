@@ -47,12 +47,8 @@ public abstract class SimpleTofuMachineRecipe extends TofuMachineRecipe implemen
                 ItemStack output = this.recipes.get(new IngredientDic(OreDictionary.getOreName(oreId)));
                 if (output != null) return output;
             }
-            return null;
         }
-        else
-        {
-            return this.recipes.get(new IngredientItem(input));
-        }
+        return this.recipes.get(new IngredientItem(input));
     }
 
     public Map<Ingredient<?>, ItemStack> getRecipeList()

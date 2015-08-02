@@ -26,4 +26,8 @@ public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
     {
         return TFPipeIconProvider.TYPE.PipeFluidsTofuIshi.ordinal();
     }
+
+    public int x() { return 0; }
+    public int y() { return 0; }
+    public int z() { return 0; }
 }

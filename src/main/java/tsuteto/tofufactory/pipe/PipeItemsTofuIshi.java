@@ -41,4 +41,8 @@ public class PipeItemsTofuIshi extends Pipe<PipeTransportItems> //implements IPi
         TravelingItem item = event.item;
         item.setSpeed(Math.min(Math.max(pipeNormalSpeed, item.getSpeed()) * 1.2F, pipeNormalSpeed * 15.0F));
     }
+
+    public int x() { return 0; }
+    public int y() { return 0; }
+    public int z() { return 0; }
 }
