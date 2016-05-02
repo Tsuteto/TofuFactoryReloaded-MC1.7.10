@@ -15,8 +15,6 @@ public class PipeFluidsZunda extends PipeFluidsWood
         super(item);
         this.standardIconIndex = TFPipeIconProvider.TYPE.PipeFluidsZunda_Standard.ordinal();
         this.solidIconIndex = TFPipeIconProvider.TYPE.PipeAllZunda_Solid.ordinal();
-        this.transport.flowRate = 20;
-        this.transport.travelDelay = 2;
     }
 
     @Override

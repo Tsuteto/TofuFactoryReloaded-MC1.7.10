@@ -11,8 +11,7 @@ public class PipeFluidsTofuIshi extends Pipe<PipeTransportFluids>
     public PipeFluidsTofuIshi(Item item)
     {
         super(new PipeTransportFluids(), item);
-        this.transport.flowRate = 20;
-        this.transport.travelDelay = 2;
+        this.transport.initFromPipe(this.getClass());
     }
 
     @Override

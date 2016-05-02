@@ -1,8 +1,11 @@
 package tsuteto.tofufactory.integration;
 
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.ModContainer;
 import net.minecraftforge.common.config.Configuration;
 import tsuteto.tofufactory.core.TofuFactory;
+
+import java.util.List;
 
 public class PluginSlot
 {
@@ -148,5 +151,18 @@ public class PluginSlot
     public void loadConfig(Configuration cfg)
     {
         configFlag = cfg.get("integration", this.name, true, "Integration with " + this.name).getBoolean(true);
+    }
+
+    protected ModContainer getModContainer(String modId)
+    {
+        List<ModContainer> mods = Loader.instance().getModList();
+        for (ModContainer mod : mods)
+        {
+            if (modId.equals(mod.getModId()))
+            {
+                return mod;
+            }
+        }
+        return null;
     }
 }

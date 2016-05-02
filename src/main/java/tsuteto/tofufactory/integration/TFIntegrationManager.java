@@ -24,7 +24,7 @@ public class TFIntegrationManager
 
     static
     {
-        modBC       = registerPlugin(new PluginSlot("BuildCraft", ModIDs.BC, "BC").withRecipes());
+        modBC       = registerPlugin(new PluginSlotBC("BuildCraft", ModIDs.BC, "BC").withRecipes());
         modFFM      = registerPlugin(new PluginSlot("Forestry", ModIDs.FFM, "FFM").withRecipes());
         modIC2      = registerPlugin(new PluginSlot("IC2", ModIDs.IC2, "IC2").withRecipes());
         modFC       = registerPlugin(new PluginSlot("FarmCraftory", ModIDs.FC, "FC")); // 1.6.2 yet
