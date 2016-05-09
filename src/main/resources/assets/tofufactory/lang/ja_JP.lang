@@ -1,4 +1,8 @@
-itemGroup.TofuFactory=豆腐Factory Reloaded
+#----------------------------------------------------------
+# lang: Japanese
+#----------------------------------------------------------
+
+itemGroup.TofuFactory=豆腐Factory
 
 tile.tofufactory:oreMithril.name=ミスリル鉱石
 tile.tofufactory:oreMithrilTofu.name=ミスリル豆腐鉱石
@@ -114,6 +118,12 @@ for.circuit.Sprouts=もやし畑
 for.circuit.Apricot=杏園
 for.circuit.TofuTree=豆腐の木園
 for.circuit.SoybeanHell=地獄大豆畑
+
+for.flowers.tofu=豆腐
+
+tofufactory.bees.species.kinu=絹
+tofufactory.bees.species.momen=木綿
+tofufactory.bees.species.kongo=金剛
 
 # TC
 item.tofufactory:wandFocus_tofu1.name=豆腐の杖星

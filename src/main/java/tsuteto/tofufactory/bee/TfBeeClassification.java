@@ -6,22 +6,22 @@ import forestry.api.genetics.IClassification;
 
 import java.util.ArrayList;
 
-public enum BeeClassification implements IClassification
+public enum TFBeeClassification implements IClassification
 {
-    TOFU("Tofu", "tofu"),
-    VEGETABLE("Vegetable", "Vegetable");
+    TOFU("Tofu"),
+    VEGETABLE("Vegetable");
     private String uID;
     private String latin;
-    private ArrayList species;
+    private ArrayList<IAlleleSpecies> species;
     private IClassification parent;
     private EnumClassLevel level;
 
-    private BeeClassification(String name, String scientific)
+    TFBeeClassification(String scientific)
     {
-        this.uID = "classification." + name.toLowerCase();
+        this.uID = "classification." + this.name().toLowerCase();
         this.latin = scientific;
         this.level = EnumClassLevel.GENUS;
-        this.species = new ArrayList();
+        this.species = new ArrayList<IAlleleSpecies>();
         this.parent = AlleleManager.alleleRegistry.getClassification("family.apidae");
         AlleleManager.alleleRegistry.registerClassification(this);
     }
@@ -60,7 +60,7 @@ public enum BeeClassification implements IClassification
 
     public IAlleleSpecies[] getMemberSpecies()
     {
-        return (IAlleleSpecies[])((IAlleleSpecies[])this.species.toArray(new IAlleleSpecies[this.species.size()]));
+        return this.species.toArray(new IAlleleSpecies[this.species.size()]);
     }
 
     public void addMemberSpecies(IAlleleSpecies species)

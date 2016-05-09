@@ -1,19 +1,11 @@
 package tsuteto.tofufactory.block;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import tsuteto.tofu.block.BlockTfMachineBase;
 import tsuteto.tofufactory.core.TofuFactory;
-import tsuteto.tofufactory.entity.EntitySmokeTofuFX;
-import tsuteto.tofufactory.proxy.TFIconTexture;
 import tsuteto.tofufactory.tileentity.TileEntityFactoryTfMachine;
-
-import java.util.Random;
 
 public abstract class BlockTofuMachine extends BlockTfMachineBase
 {
@@ -90,35 +82,6 @@ public abstract class BlockTofuMachine extends BlockTfMachineBase
             }
 
             return true;
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
-    {
-        if (this.isActive)
-        {
-            for (int i = 0; i < this.machineRand.nextInt(3) + 1; i++)
-            {
-                double r = 0.8D + this.machineRand.nextDouble();
-                double t = this.machineRand.nextDouble() * 2.0D * Math.PI;
-                double d0 = (double) par2 + 0.5D;
-                double d1 = (double) par3 + 0.3D + this.machineRand.nextDouble();
-                double d2 = (double) par4 + 0.5D;
-                double d3 = Math.sin(t) / 64.0D;
-                double d4 = 0.05D + this.machineRand.nextDouble() * 0.05D;
-                double d5 = Math.cos(t) / 64.0D;
-                EntitySmokeTofuFX entityFX = new EntitySmokeTofuFX(par1World, d0, d1, d2, d3, d4, d5);
-                IIcon smokeIcon = TFIconTexture.smokeTofu;
-
-//            if (this.isHalloween())
-//            {
-//                smokeIcon = TFIconTexture.smokeTofuGlow;
-//            }
-
-                entityFX.setParticleIcon(smokeIcon);
-                FMLClientHandler.instance().getClient().effectRenderer.addEffect(entityFX);
-            }
         }
     }
 

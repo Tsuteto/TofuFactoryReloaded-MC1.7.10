@@ -2,6 +2,9 @@ package tsuteto.tofufactory.integration;
 
 import com.google.common.collect.Lists;
 import net.minecraftforge.common.config.Configuration;
+import tsuteto.tofufactory.integration.slot.PluginSlot;
+import tsuteto.tofufactory.integration.slot.PluginSlotBC;
+import tsuteto.tofufactory.integration.slot.PluginSlotGT5;
 
 import java.util.List;
 

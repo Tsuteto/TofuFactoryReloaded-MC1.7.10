@@ -4,14 +4,15 @@ import com.google.common.collect.Lists;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import forestry.api.apiculture.IHiveDrop;
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import tsuteto.tofu.init.TcItems;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public enum TFHiveType
 {
@@ -27,7 +28,7 @@ public enum TFHiveType
 
     static void registerBeehiveDrops()
     {
-        KINU.addDrop((new HiveDrop(BeeGenomeManager.getTemplateKINU(), new ItemStack[] {new ItemStack(Items.apple, 1, 0)}, 80)).setIgnobleShare(0.7F));
+        KINU.addDrop((new HiveDrop(TFBeeGenomeManager.getTemplateKinu(), new ItemStack[] {new ItemStack(TcItems.tofuKinu, 4)}, 80)).setIgnobleShare(0.7F));
     }
 
     private TFHiveType(String hiveName, int light, boolean visible)

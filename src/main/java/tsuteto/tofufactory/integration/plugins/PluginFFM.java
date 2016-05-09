@@ -42,10 +42,11 @@ public class PluginFFM implements ITFPlugin
     public static ArrayList<ItemStack> tofuItems = Lists.newArrayList();
     public static ArrayList<ItemStack> zundaItems = Lists.newArrayList();
 
-//    public static Item FFMTube;
-
     @Override
-    public void preInit() throws Exception {}
+    public void preInit() throws Exception
+    {
+        BeeManager.preInit();
+    }
 
     public void init() throws Exception
     {

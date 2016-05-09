@@ -1,9 +1,12 @@
-package tsuteto.tofufactory.integration;
+package tsuteto.tofufactory.integration.slot;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.ModContainer;
 import net.minecraftforge.common.config.Configuration;
 import tsuteto.tofufactory.core.TofuFactory;
+import tsuteto.tofufactory.integration.ITFPlugin;
+import tsuteto.tofufactory.integration.ITFRecipeModule;
+import tsuteto.tofufactory.integration.IntegrationPhase;
 
 import java.util.List;
 
@@ -61,7 +64,7 @@ public class PluginSlot
             this.plugin.preInit();
             this.phase = IntegrationPhase.PRE_INITIALIZED;
         }
-        catch (Exception e)
+        catch (Throwable e)
         {
             this.exception = e;
         }
@@ -75,7 +78,7 @@ public class PluginSlot
             this.plugin.init();
             this.phase = IntegrationPhase.INITIALIZED;
         }
-        catch (Exception e)
+        catch (Throwable e)
         {
             this.exception = e;
         }
@@ -93,7 +96,7 @@ public class PluginSlot
                 recipe.register();
                 this.phase = IntegrationPhase.RECIPE_LOADED;
             }
-            catch (Exception e)
+            catch (Throwable e)
             {
                 this.exception = e;
             }

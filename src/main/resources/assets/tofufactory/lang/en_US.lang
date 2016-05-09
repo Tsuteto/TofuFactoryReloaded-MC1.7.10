@@ -1,3 +1,7 @@
+#----------------------------------------------------------
+# lang: English
+#----------------------------------------------------------
+
 itemGroup.TofuFactory=TofuFactory
 
 tile.tofufactory:oreMithril.name=Mithril Ore
@@ -115,6 +119,12 @@ for.circuit.Apricot=Apricot Plantation
 for.circuit.TofuTree=Tofu Tree Plantation
 for.circuit.SoybeanHell=Hell Soybean Farm
 
+for.flowers.tofu=Tofu
+
+tofufactory.bees.species.kinu=Kinu
+tofufactory.bees.species.momen=Momen
+tofufactory.bees.species.kongo=Kongo
+
 # TC
 item.tofufactory:wandFocus_tofu1.name=Wand Focus: Tofu
 item.tofufactory:wandFocus_tofu2.name=Wand Focus: Tofu Transmutation
@@ -128,7 +138,7 @@ tc.research_text.TofuAspect=Mystery of the Orient
 tc.research_page.TofuAspect=  Tofu is a mystery of the Orient. While this has been familiar with the people living there who eat it from ancient times, in this world its square white body holds a spiritual power inside, or so they say--
 tc.research_name.ArcaneKinuTofu=Kinugoshi Tofu
 tc.research_text.ArcaneKinuTofu=A mystery material from the Orient
-tc.research_page.ArcaneKinuTofu=  Kinugoshi is a basic style of tofu, which is solid white and has a soft and delicate beauty. Soy milk curds by giving a certain kind of shock from water magic.
+tc.research_page.ArcaneKinuTofu=  Kinugoshi is a basic style of tofu, which is solid white and has a soft and delicate beauty. Soy milk will curd by giving a certain kind of shock from water magic.
 tc.research_name.tofuFocus=Wand Focus: Tofu
 tc.research_text.tofuFocus=Tofu Magic
 tc.research_page.tofuFocus=  Finally Tofu has given you a glimpse of its magic power. You can expect it gives you even more power depending on you. When used against soy milk on the field, this wand focus transforms it into tofu with the effect of bittern.

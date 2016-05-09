@@ -1,0 +1,181 @@
+﻿#----------------------------------------------------------
+# lang: Simplified Chinese - translated by Yonnemy
+#----------------------------------------------------------
+
+itemGroup.TofuFactory=豆腐工业
+
+tile.tofufactory:oreMithril.name=秘银矿石
+
+tile.tofufactory:oreMithrilTofu.name=秘银豆腐矿石
+
+tile.tofufactory:blockTofuMetal.tofuSteel.name=钢豆腐块
+
+tile.tofufactory:blockTofuMetal.mithrilTofu.name=秘银豆腐块
+tile.tofufactory:blockTofuMetal.sol.name=日之块
+tile.tofufactory:blockTofuMetal.luna.name=月之块
+
+tile.tofufactory:tfPulverizer.name=豆腐打粉机
+tile.tofufactory:tfCompactor.name=豆腐压缩机
+
+tile.tofufactory:tfCuttingMachine.name=豆腐切割机
+
+
+container.tofufactory:tfPulverizer=豆腐打粉机
+container.tofufactory:tfCompactor=豆腐压缩机
+
+container.tofufactory:tfCuttingMachine=豆腐切割机
+item.tofufactory:zundaSword.name=毛豆泥剑
+item.tofufactory:zundaIngot.name=毛豆泥锭
+
+item.tofufactory:flour.name=面粉
+item.tofufactory:bakingSoda.name=小苏打
+item.tofufactory:udonNoodles.name=乌冬面
+item.tofufactory:ramenNoodles.name=中式面
+item.tofufactory:craftingHammer.name=豆腐锻造锤
+item.tofufactory:craftingHammer.tooltip.UsesLeft=使用剩余: %d
+
+item.tofufactory:kamaboko.name=鱼糕
+
+item.tofufactory:soySauceUdon.name=乌冬
+item.tofufactory:misoUdonStew.name=味噌乌冬
+item.tofufactory:soySauceRamen.name=拉面
+item.tofufactory:ingot.tofuSteel.name=钢豆腐锭
+item.tofufactory:ingot.mithrilTofu.name=秘银豆腐锭
+item.tofufactory:ingot.sol.name=日之锭
+item.tofufactory:ingot.luna.name=月之锭
+
+item.tofufactory:plate.tofuSteel.name=钢豆腐板
+item.tofufactory:plate.mithrilTofu.name=秘银豆腐板
+item.tofufactory:plate.sol.name=日之板
+item.tofufactory:plate.luna.name=月之板
+
+item.tofufactory:gear.tofuSteel.name=钢豆腐齿轮
+item.tofufactory:gear.mithrilTofu.name=秘银豆腐齿轮
+item.tofufactory:gear.sol.name=日之齿轮
+item.tofufactory:gear.luna.name=月之齿轮
+item.tofufactory:dust.tofuSteel.name=钢豆腐粉
+item.tofufactory:dust.mithrilTofu.name=秘银豆腐粉
+item.tofufactory:dust.sol.name=日之粉
+item.tofufactory:dust.luna.name=月之粉
+item.tofufactory:dust.iron.name=铁粉
+item.tofufactory:dust.diamondTofu.name=钻石豆腐粉
+item.tofufactory:dust.mithril.name=秘银粉
+
+item.tofufactory:gem.emeraldTofu.name=绿宝石豆腐
+item.tofufactory:gem.peridotTofu.name=橄榄石豆腐
+item.tofufactory:gem.rubyTofu.name=红宝石豆腐
+item.tofufactory:gem.sapphireTofu.name=蓝宝石豆腐
+item.tofufactory:gem.sugiliteTofu.name=杉石豆腐
+item.tofufactory:gem.topazTofu.name=黄宝石豆腐
+
+item.tofufactory:magicCircuit.name=魔法回路
+item.tofufactory:magicCircuitAdv.name=高级魔法回路
+item.tofufactory:ringSun.name=日之环
+item.tofufactory:ringMoon.name=月之环
+item.tofufactory:tofuBlade.name=豆腐片
+
+fluid.SoupStock=高汤
+fluid.NoodleSoup=面汤
+fluid.Zunda=毛豆泥水
+fluid.DrinkingWater=饮用水
+fluid.MoltenZunda=熔融的毛豆泥
+
+# BC
+
+item.tofufactory:pipe.item.tofuIshi.name=石豆腐管道
+item.tofufactory:pipe.fluid.tofuIshi.name=石豆腐流体管
+item.tofufactory:pipe.power.tofuIshi.name=石豆腐能量管
+item.tofufactory:pipe.item.zunda.name=毛豆泥管道
+item.tofufactory:pipe.fluid.zunda.name=毛豆泥流体管
+item.tofufactory:pipe.power.zunda.name=毛豆泥能量管
+
+# IC2
+
+item.tofufactory:zundaBattery.name=毛豆泥电池
+item.tofufactory:zunda_swordBow.name=毛豆泥剑2
+item.tofufactory:cell.bittern.name=卤水单元
+item.tofufactory:cell.drinkingWater.name=饮用水单元
+item.tofufactory:cell.noodleSoup.name=面汤单元
+item.tofufactory:cell.soupStock.name=高汤单元
+item.tofufactory:cell.zundaWater.name=毛豆泥水单元
+item.tofufactory:cell.soymilk.name=豆浆单元
+item.tofufactory:cell.soymilkHell.name=地狱豆浆单元
+item.tofufactory:cell.soySauce.name=酱油单元
+# FFM
+
+tile.tofufactory:tofuHive.name=豆腐蜂箱
+item.tofufactory:zundaGrafter.name=毛豆泥剪枝器
+item.tofufactory:tofuBackpack1.name=豆腐职人背包
+item.tofufactory:tofuBackpack2.name=豆腐职人编织背包
+item.tofufactory:zundaBackpack1.name=毛豆泥背包
+item.tofufactory:zundaBackpack2.name=毛豆泥编织背包
+
+item.tofufactory:tube.zunda.name=毛豆泥真空管
+item.tofufactory:tube.tofuGem.name=豆腐宝石真空管
+item.tofufactory:tube.ishiTofu.name=石豆腐真空管
+
+item.tofufactory:tube.metalTofu.name=钢豆腐真空管
+item.tofufactory:tube.hellTofu.name=地狱豆腐真空管
+for.circuit.Edamame=毛豆田
+for.circuit.Soybean=大豆田
+for.circuit.Sesame=芝麻田
+for.circuit.Sprouts=豆芽田
+for.circuit.Apricot=杏树林场
+for.circuit.TofuTree=豆腐树林场
+for.circuit.SoybeanHell=地狱大豆田
+
+for.flowers.tofu=豆腐
+
+tofufactory.bees.species.kinu=丝绸
+tofufactory.bees.species.momen=木棉
+tofufactory.bees.species.kongo=金刚
+
+# TC
+
+item.tofufactory:wandFocus_tofu1.name=法杖核心：豆腐
+item.tofufactory:wandFocus_tofu2.name=法杖核心：豆腐炼成
+item.tofufactory:wandFocus_soy.name=法杖核心：福豆
+tc.research_category.Tofu=豆腐
+tc.aspect.tofu=豆腐，秘密
+tc.research_name.TofuAspect=豆腐的样子
+tc.research_text.TofuAspect=东洋的秘密
+tc.research_page.TofuAspect=  豆腐是东方的神秘之处。然而住在这里的人们都已经习惯了吃这个，“它在这个世界的又白又方的躯壳里拥有精神的力量，”他们大约是这么说的……
+tc.research_name.ArcaneKinuTofu=嫩豆腐
+tc.research_text.ArcaneKinuTofu=来自东方的神秘素材
+tc.research_page.ArcaneKinuTofu=  嫩豆腐是豆腐的基本样式, 具有柔和而微妙的美的白色固体。 豆浆被水魔法给予的某种震撼所凝固。
+
+tc.research_name.tofuFocus=法杖核心：豆腐
+tc.research_text.tofuFocus=豆腐魔法
+tc.research_page.tofuFocus=  豆腐最终向你展现了它的神奇力量。你可以指望它给你更多能由你控制的力量。当对地上的豆浆使用时，这个法杖核心用盐卤的力量将它变为豆腐。
+tc.research_name.tofuFocus2=法杖核心：豆腐炼成
+tc.research_text.tofuFocus2=豆腐炼成
+tc.research_page.tofuFocus2=  虽然用了一些祭品，不过你成功地变出了豆腐！只要你献出一只祭品，就能随时得到豆腐。
+tc.research_name.soyFocus=法杖核心：福豆
+
+tc.research_text.soyFocus=被祝福的大豆
+tc.research_page.soyFocus=  当你寻找豆腐时，你已经深入大豆的灵魂。 现在你知道了他们是豆腐的本源； 这些被神明祝福的豆子在你面前一个接一个地涌出， 这可以成为一股驱魔的力量。
+tc.research_name.Mithril=秘银豆腐
+tc.research_text.Mithril=像豆腐，像魔法
+tc.research_page.Mithril=  豆腐一般的白色软金属，它是秘银，蕴含着神奇的力量。
+tc.research_name.Sol=索尔
+tc.research_text.Sol=拂晓之豆腐
+tc.research_page.Sol=  金色的秘银豆腐，这合金的光泽如同轻柔地照耀世界的朝阳。
+tc.research_name.Luna=露娜
+tc.research_text.Luna=玖月之月般的豆腐
+tc.research_page.Luna=  银色的秘银豆腐，这合金的光泽如同奇异地出现在夜空云间的月亮。
+tc.research_name.MagicCircuit=魔法回路
+tc.research_text.MagicCircuit=豆腐魔法之基本素材
+tc.research_page.MagicCircuit=  由豆腐的魔力创造的电路控制得复杂而微妙。这是豆腐机器的必备。
+# Achievements
+
+achievement.tofufactory:mithril=魔法的开始
+achievement.tofufactory:mithril.desc=去寻找秘银矿时吧！
+achievement.tofufactory:magicPowder=魔法粉末
+achievement.tofufactory:magicPowder.desc=粉碎秘银矿石
+# Update
+
+tofufactory.update.server=  豆腐工厂重制版 %1$s 更新可以在这里找到： %2$s
+
+tofufactory.update.client=§e  豆腐工厂重制版§r §a%1$s§r 更新可以在这里找到！ %2$s
+
+tofufactory.update.link=§n在这里下载§r

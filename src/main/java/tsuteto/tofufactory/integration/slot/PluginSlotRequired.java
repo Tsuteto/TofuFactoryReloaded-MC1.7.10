@@ -1,4 +1,4 @@
-package tsuteto.tofufactory.integration;
+package tsuteto.tofufactory.integration.slot;
 
 import net.minecraftforge.common.config.Configuration;
 

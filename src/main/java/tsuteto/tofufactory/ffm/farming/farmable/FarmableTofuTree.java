@@ -1,7 +1,7 @@
 package tsuteto.tofufactory.ffm.farming.farmable;
 
 import forestry.api.farming.ICrop;
-import forestry.core.utils.Vect;
+import forestry.core.utils.vect.Vect;
 import forestry.farming.logic.CropBlock;
 import forestry.farming.logic.FarmableGenericSapling;
 import net.minecraft.block.Block;

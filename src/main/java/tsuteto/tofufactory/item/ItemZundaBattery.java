@@ -3,15 +3,11 @@ package tsuteto.tofufactory.item;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import tsuteto.tofufactory.integration.plugins.PluginIC2;
-import tsuteto.tofufactory.integration.plugins.PluginIC2;
-
-import java.util.List;
 
 public class ItemZundaBattery extends ItemTofuFactory implements IElectricItem
 {
@@ -118,11 +114,5 @@ public class ItemZundaBattery extends ItemTofuFactory implements IElectricItem
     public double getTransferLimit(ItemStack itemStack)
     {
         return 300;
-    }
-
-    @Override
-    public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List p_77624_3_, boolean p_77624_4_)
-    {
-        p_77624_3_.add(ElectricItem.manager.getToolTip(p_77624_1_));
     }
 }

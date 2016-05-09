@@ -2,7 +2,7 @@ package tsuteto.tofufactory.integration.recipes;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
-import forestry.core.config.ForestryItem;
+import forestry.plugins.PluginCore;
 import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -100,7 +100,7 @@ public class RecipeFFM implements ITFRecipeModule
                 'y', Items.string,
                 's', Blocks.chest);
 
-        ItemStack inputItem = ForestryItem.craftingMaterial.getItemStack();
+        ItemStack inputItem = PluginCore.items.craftingMaterial.getItemStack();
         inputItem.setItemDamage(3);
         RecipeManagers.carpenterManager.addRecipe(200, new FluidStack(FluidRegistry.WATER, 1000), null,
                 new ItemStack(PluginFFM.tofuBackpackT2),
@@ -182,13 +182,13 @@ public class RecipeFFM implements ITFRecipeModule
 
         // 3x Copper ingot
         RecipeManagers.carpenterManager.addRecipe(20, new FluidStack(FluidRegistry.LAVA, 200), null,
-                ForestryItem.ingotCopper.getItemStack(3),
+                PluginCore.items.ingotCopper.getItemStack(3),
                 "x",
                 'x', "oreCopper");
 
         // 3x Tin ingot
         RecipeManagers.carpenterManager.addRecipe(20, new FluidStack(FluidRegistry.LAVA, 200), null,
-                ForestryItem.ingotTin.getItemStack(3),
+                PluginCore.items.ingotTin.getItemStack(3),
                 "x",
                 'x', "oreTin");
 

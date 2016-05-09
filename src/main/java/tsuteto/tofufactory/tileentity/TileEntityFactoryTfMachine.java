@@ -9,7 +9,6 @@ import tsuteto.tofu.api.tileentity.TileEntityTfMachineSidedInventoryBase;
 import tsuteto.tofu.item.ItemTcMaterials;
 import tsuteto.tofufactory.api.recipes.IMachineRecipe;
 import tsuteto.tofufactory.block.BlockTofuMachine;
-import tsuteto.tofufactory.core.TofuFactory;
 
 public abstract class TileEntityFactoryTfMachine extends TileEntityTfMachineSidedInventoryBase implements ITfConsumer
 {
@@ -138,7 +137,7 @@ public abstract class TileEntityFactoryTfMachine extends TileEntityTfMachineSide
         if (this.isAccelerated())
         {
             ItemStack itemStack = this.itemStacks[SLOT_ACCELERATION];
-            return WHOLE_COOK_TIME_BASE / itemStack.stackSize;
+            return WHOLE_COOK_TIME_BASE / (itemStack.stackSize + 1);
         }
         return WHOLE_COOK_TIME_BASE;
     }
@@ -148,7 +147,9 @@ public abstract class TileEntityFactoryTfMachine extends TileEntityTfMachineSide
         if (this.isAccelerated())
         {
             ItemStack itemStack = this.itemStacks[SLOT_ACCELERATION];
-            return 5.0D / (double) this.getWholeProcTime() + COST_TF_PER_TICK / 10.0D * Math.pow(1.1, itemStack.stackSize);
+            return 5.0D / (double) this.getWholeProcTime() + COST_TF_PER_TICK / 10.0D * Math.pow(1.1, itemStack.stackSize + 1);
+            // planned in next update
+            //return 5.0D / (double) this.getWholeProcTime() * Math.pow(1.05, itemStack.stackSize);
         }
         return COST_TF_PER_TICK;
     }
@@ -156,7 +157,7 @@ public abstract class TileEntityFactoryTfMachine extends TileEntityTfMachineSide
     protected boolean canSmelt()
     {
         isTfNeeded = false;
-        if (this.itemStacks[SLOT_ITEM_INPUT] != null && this.worldObj.isAirBlock(this.xCoord, this.yCoord + 1, this.zCoord))
+        if (this.itemStacks[SLOT_ITEM_INPUT] != null)
         {
             ItemStack itemstack = this.getMachineRecipe().getProcessingResult(this.itemStacks[0]);
 

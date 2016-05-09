@@ -1,7 +1,6 @@
 package tsuteto.tofufactory.storage;
 
 import forestry.api.storage.IBackpackDefinition;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.oredict.OreDictionary;
@@ -32,12 +31,6 @@ public class BackpackDefinition implements IBackpackDefinition
 
     @Override
     public String getName(ItemStack itemStack)
-    {
-        return StatCollector.translateToLocal(itemStack.getUnlocalizedName() + ".name");
-    }
-
-    @Override
-    public String getName()
     {
         return StatCollector.translateToLocal("item." + this.name + ".name");
     }
@@ -71,7 +64,7 @@ public class BackpackDefinition implements IBackpackDefinition
     }
 
     @Override
-    public boolean isValidItem(EntityPlayer player, ItemStack itemstack)
+    public boolean isValidItem(ItemStack itemstack)
     {
         boolean flag = false;
 
