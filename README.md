@@ -2,7 +2,7 @@
 豆腐Craftの工業mod連携アドオン。シフト氏から引き継いで変更や増強してReloadedになりました。
 
 ## Distribution and Usage
-http://forum.minecraftuser.jp/viewtopic.php?f=13&t=1014
+https://tsuteto.hacca.jp/mcmods
 
 ## Dependencies
 - Minecraft 1.7.10
